@@ -82,8 +82,10 @@
 										return $uri_params;*/
 										header('location:/error');
 									} else {
-										@eval ('include_once "' . $cs['dirName'] . $uri_params['controller'] . 'Controller.php";');
-										@eval ('$curClass = new ' . $uri_params['controller'] . 'Controller(false);');
+                                        include_once $cs['dirName'] . $uri_params['controller'] . 'Controller.php';
+                                        $curClassName = $uri_params['controller'].'Controller';
+                                        $curClass = new $curClassName(false);
+
 										if (!method_exists($curClass , $uri_params['action'] . 'Action')) {
 											if($uri_params['controller']!='admin')
 												header('location:/error');

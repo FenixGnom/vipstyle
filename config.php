@@ -12,19 +12,19 @@ $AdminPassword = '46b5aa467afd9a1419c82324a5b5398e';
 $AdminFlag = '1';
 
 //////  Partner Settings ///////tpl_settings/////
-$PathToTemplate = 'partner8_green/';
+$PathToTemplate = 'partner7/';
 
 ////  End Partner Settings /////
 
 ////////  User Settings ////////user_settings/////
-$ShowMode = 1;
+$ShowMode = 0;
 $CatStart = 20;
 $ProductsPerPage = 16;
 $ProductsPageSlide = 5;
 $AnswerServers = 0;
 $PartnerShopName = 'Partners SHOP';
 $PartnerShopMails = 'info@vsemayki.ru';
-$PartnerShowOthers = 0;
+$PartnerShowOthers = 1;
 $PartnerShopICQ ='';
 $PartnerID = '113002';
 $PartnerSalt = 'dyzc0zj3j54o0w4go0kgow40skso48s';

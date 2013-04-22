@@ -8,11 +8,9 @@ class Front {
 	}
 
 	public function dispatch ($strActionName) {
-	
-		@eval( '
-          $results = $this->curr_class->' . $strActionName. 'Action();
-        ');
-		
+
+        $strActionName = $strActionName.'Action';
+        $results = $this->curr_class->$strActionName();
         return $results;
 	}
 }

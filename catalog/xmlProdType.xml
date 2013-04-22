@@ -70,7 +70,6 @@
           <size id="m" price_add="0">M (46-48)</size>
           <size id="l" price_add="0">L (48-50)</size>
           <size id="xl" price_add="0">XL (50-52)</size>
-          <size id="xxl" price_add="0">XXL (52-54)</size>
           <size id="xxxl" price_add="0">XXXL (54)</size>
         </sizes>
       </color>
@@ -117,7 +116,6 @@
           <size id="s" price_add="0">S (44-46)</size>
           <size id="m" price_add="0">M (46-48)</size>
           <size id="l" price_add="0">L (48-50)</size>
-          <size id="xl" price_add="0">XL (50-52)</size>
           <size id="xxl" price_add="0">XXL (52-54)</size>
           <size id="xxxl" price_add="0">XXXL (54)</size>
         </sizes>
@@ -151,7 +149,6 @@
         <sizes>
           <size id="xs" price_add="0">XS (42-44)</size>
           <size id="s" price_add="0">S (44-46)</size>
-          <size id="m" price_add="0">M (46-48)</size>
           <size id="l" price_add="0">L (48-50)</size>
           <size id="xl" price_add="0">XL (50-52)</size>
           <size id="xxl" price_add="0">XXL (52-54)</size>
@@ -607,9 +604,7 @@
       <color id="white">
         <name>Белый</name>
         <sizes>
-          <size id="s" price_add="0">S (44-46)</size>
           <size id="m" price_add="0">M (46-48)</size>
-          <size id="l" price_add="0">L (48-50)</size>
           <size id="xl" price_add="0">XL (50-52)</size>
           <size id="xxl" price_add="0">XXL (52-54)</size>
         </sizes>
