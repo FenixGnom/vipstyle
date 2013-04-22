@@ -1,0 +1,57 @@
+<script>
+	function addFoto(id)
+	{
+		var link='/admin/addfoto';
+		if(id)
+			var link='/admin/addfoto/id/'+id;
+		jQuery.get(link,function(html)
+		{
+			jQuery('#addforms').html(html);
+			jQuery('#bb').html('');
+		},'html');
+	}
+	function addNewFoto()
+	{
+		var id=jQuery('input[name="id"]').val();
+		var text=jQuery('textarea[name="text"]').val();
+		jQuery.post(
+		'/admin/foto',
+		{id:id,text:text},
+		function (html){		
+   		$('#contents').html(html);
+   	},
+   	'html');
+	}
+	
+	function delFotoThiIs(id)
+	{
+		jQuery.get('/admin/foto/del/'+id,function(html)
+		{
+			$('#contents').html(html);
+		},'html');
+	}
+</script>
+<div class="topTile"> <?php echo $this->vars['title'];?></div>
+<div id="addforms" class="forms" style="width:650px;"></div>
+<div id="bb"><a class="add" href="javascript:addFoto();">Добавить</a></div>
+<div style="SHowInPAnel">
+	<table class="showTablesForm" width=90%>
+		<?$n=0;?>
+		<?for($i=0;$i<count($this->vars['foto']);$i++):?>
+		<?if($n==0):?>
+			<tr>
+		<?endif;?>
+			<td width="30%">
+				<a style="text-decoration:none;color:#000;" href="javascript:addFoto(<?php echo $this->vars['foto'][$i]['id']?>);"><img src="/info/files/_<?php echo $this->vars['foto'][$i]['path']?>" />
+				<div style="font-size:12px;"><?=substr($this->vars['foto'][$i]['text'],0,30)?></div></a>
+			</td>	
+		
+		<?if($n==2):?>
+				</tr>
+				<?$n=0;?>
+			<?else :?>
+				<?$n++;?>
+			<?endif;?>
+		<?endfor;?>	
+	</table>
+</div>

@@ -1,0 +1,92 @@
+.ProductOneBlock {
+	width:590px;
+	margin-top:20px;
+}
+
+.ProductSS {
+	width:590px;
+	height:27px;
+	text-align:left;
+}
+
+.ProductSS-true {
+	width:140px;
+	margin-right:2px;
+	height:27px;
+	background: url('/themes/partner6/images/active.jpg') center no-repeat;
+	color:#ffffff;
+	font-size:11px;
+	line-height:27px;
+	text-align:center;
+}
+
+.ProductSS-false {
+	width:145px;
+	margin-right:2px;
+	height:27px;
+	background: url('/themes/partner6/images/noactive.jpg') center no-repeat;
+	color:#000;
+	font-size:11px;
+	cursor:pointer;
+	line-height:27px;
+	text-align:center;
+}
+
+.ProductOnline {
+	width:590px;
+	overflow:hidden;
+	border:1px solid #005081;
+}
+
+.ProductOnlineIMG {
+	width:250px;
+	height:250px;
+	margin-top:10px;
+}
+
+.ProductOnlineParams {
+  	width:280px;
+  	margin-left:10px;
+}
+
+.ParamsPr {
+	margin-top:10px;
+	color:#000;
+	font-size:12px;
+	text-align:left;
+	margin-right:5px;
+}
+
+.ProductSmallImageBlock {
+	width:auto;
+}
+
+.ProductOnlineWages
+{
+	margin-left:10px;
+}
+.ProductOnlineWages span {
+    font-weight:normal;
+}
+
+.buttonAddCart {
+    margin-bottom:10px;
+	margin-top:10px;
+	text-align:center;
+}
+
+.buttonAdd {
+	width:120px;
+	height:36px;
+	background: url('/themes/partner6/images/zakaz.gif') no-repeat;
+	border:0px;
+	cursor:pointer;
+}
+.inputClassNum
+{
+   	border:1px solid #005081;
+	height:18px;
+	font-size:12px;
+	margin-top:2px;
+	color:#000;
+}

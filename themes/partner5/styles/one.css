@@ -1,0 +1,147 @@
+/*content - about smth in details*/
+.content .bookmarks {
+	margin-top:12px;
+	position:relative;
+	border:0px none #fff;
+	overflow:hidden;
+	height:26px;
+}
+.content .bookmarks .noactive .left {
+	float:left;
+	background:url(/themes/partner5/images/bookmk_l.gif) no-repeat;
+	width:8px;
+	height:26px;
+}
+
+.content .bookmarks .noactive  span {
+	float:left;
+	height:26px;
+	background:url(/themes/partner5/images/bookmk.gif) repeat-x;
+	white-space:nowrap;
+	line-height:23px;
+}
+
+
+.content .bookmarks .noactive  span a {text-decoration:none;}
+
+.content .bookmarks  .noactive .right {
+	float:left;
+	background:url(/themes/partner5/images/bookmk_r.gif) right no-repeat;
+	height:26px;
+	width:8px;
+	margin-right:7px;
+}
+
+.content .bookmarks .active  .left {
+	float:left;
+	background:url(/themes/partner5/images/bookmk-a_l.gif) no-repeat;
+	height:26px;
+	width:8px;
+}
+
+.content .bookmarks .active  span {
+	float:left;
+	white-space:nowrap;
+	font-weight:bold;
+	background:url(/themes/partner5/images/bookmk-a.gif) repeat-x;
+	line-height:23px;
+	height:26px;
+}
+
+.content .bookmarks .active  .right {
+	float:left;
+	background:url(/themes/partner5/images/bookmk-a_r.gif) right no-repeat;
+	height:26px;
+	width:8px;
+	margin-right:7px;
+}
+
+.content .clear-both {
+	clear:both;
+}
+
+.detBox {
+	padding:9px;
+	border:1px solid #FD8B04;
+}
+.detBox .outner
+{
+	margin-bottom:14px;
+}
+.detBox #image_small {
+	width:250px;
+	padding-top:10px;
+}
+.detBox #image_small a {
+	display:block;
+	float:left;
+	margin:0 10px 10px 0;
+}
+.detBox #price {
+	color:#f00;
+}
+.detBox .order a {
+	display:block;
+	width:96px;
+	height:0;
+	padding-top:25px;
+	margin:10px auto;
+	overflow:hidden;
+	background:url(/themes/partner5/images/order_3d.gif) no-repeat;
+}
+/*window_screen (appears when offering smth)*/
+#windowCurt {
+	position:relative;
+	width:300px;
+	margin:0 auto;
+}
+.window_screen {
+	position:absolute;
+	width:300px;
+	left:0px;
+	bottom:9px;
+	padding:10px;
+	border:1px solid #FD8B04;
+	background:#fff;
+}
+.window_screen img.right {
+	float:right;
+}
+.window_screen .closeWindow div {
+	margin-right:30px;
+	font-size:larger;
+	font-weight:400;
+	color:#000;
+}
+.window_screen .CutParams {
+	clear:both;
+	padding-top:2px;
+}
+.window_screen #windowCartName {
+	font-weight:600;
+}
+.window_screen #windowCartName span {
+	color:#aaa;
+	font-weight:400;
+}
+.window_screen #showsmallcat {
+	padding-top:14px;
+}
+.window_screen #showsmallcat table {
+	border:1px dotted #CECECE;
+	border-width:1px 0;
+}
+.window_screen #showsmallcat .left {
+	float:left;
+	width:50%;
+	text-align:center;
+	margin-top:5px;
+}
+.window_screen #showsmallcat .right {
+	margin-left:50%;
+	text-align:center;
+	margin-top:5px;
+}
+.window_screen #showsmallcat .left a b, .window_screen #showsmallcat .right a b {
+	font-size:120% !important;
+}

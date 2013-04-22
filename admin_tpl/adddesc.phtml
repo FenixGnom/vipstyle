@@ -1,0 +1,57 @@
+<?php if( ! @$this->vars['ajax_subcat']): ?>
+
+<?php endif;?>
+    <?php  if( ! @$this->vars['ajax_subcat']): ?><form id="updates" onSubmit="addUpDesc('<?php echo $this->vars['objects']?>'); return false;" method="post"><?php endif;?>
+        
+	<input type="hidden" name="act" value="new">
+	<table cellpadding="0"  cellspacing="0" class="table table-striped table-bordered table-condensed">
+		<tr>
+			<td><strong><?php echo $this->vars['selecttext'];?></strong>:</td>
+			<td>
+				<select
+					<?php if( @$this->vars['subcat']): ?>
+						name="subcat" id="subcat" onChange="javascript: getSubcategories( document.getElementById('subcat').value, <?php echo @$this->vars['product'] ?> );"
+					<?php endif;?>
+					<?php if (@$this->vars['product'] && $this->vars['selecttext'] != 'Товар') { echo "onChange=\"javascript: getProducts( document.getElementById('subcat').value, document.getElementById('products').value );\""; } ?>
+					<?php if( (! @$this->vars['subcat'] && ! @$this->vars['product']) || $this->vars['selecttext'] == 'Товар'){ ?>
+						name="cat" id="cat" 
+					<?php } elseif (( ! @$this->vars['subcat'] && @$this->vars['product']))
+					{
+						echo "name=\"products\" id=\"products\"";
+					}?>
+					<?php if( @$this->vars['subcat']): ?>
+						 name="subcat" id="subcat" onChange="javascript: getSubcategories( document.getElementById('subcat').value, <?php echo @$this->vars['product'] ?> );"
+					<?php endif;?>>
+					
+					<option value="0">&nbsp;</option>
+					<?php $i=0;while($i<count($this->vars['select'])):?>
+						<?php $id= $this->vars['select'][$i]['id'];?>
+					<?php if(isset($this->vars['select'][$i]['oldid'])):?>
+						<?php $id=$this->vars['select'][$i]['oldid']?>
+					<?php endif;?>
+					<option value="<?php echo $id?>"><?php echo $this->vars['select'][$i]['name'];?></option>
+					<?php $i++; endwhile;?>
+				</select>
+			
+				<?php if( @$this->vars['subcat']): ?><span id="subcategories"></span><?php endif;?>
+				<span id="products_field"><?php echo @$this->vars['product_field'] ?></span>
+				<?php if( ! @$this->vars['ajax_subcat']): ?>
+			</td>
+		</tr>
+		<tr>		
+			<td colspan="2">
+				<strong>Описание:</strong><br>
+				<textarea name="desc" id="content" style="width:500px;height:100px;"></textarea>
+			</td>	
+        </tr>
+		<tr>
+			<td colspan="2">
+				<input type="submit" value="Добавить">
+			</td>
+		</tr>
+	</table>		
+	<?php endif;?>
+    </form>
+<?php if( ! @$this->vars['ajax_subcat']): ?>
+
+<?php endif;?>

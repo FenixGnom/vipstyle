@@ -1,0 +1,24 @@
+
+<script>
+	var ht='<tr><td>Основы</td><td><?=$this->vars['xml'][0]['date_xml']?></td></tr><tr><td>Макеты</td><td><?=$this->vars['xml'][0]['date_xml']?></td></tr><tr><td>Доставки</td><td><?=$this->vars['xml'][0]['date_xml']?></td></tr>';
+	$('#inFersd').html(ht);
+	$('#logHrefing').css('display','block');
+</script>
+<table class="table table-striped">
+	<tr>		
+		<th>Добавлено</th>
+		<th>Удалено</th>
+		<th>Изменено</th>
+	</tr>
+	<tr>		
+		<td><?php echo intval($this->vars['allMaketAdd'][0]['cc'])?> макетов</td>
+		<td><?php echo intval($this->vars['allMaketDel'][0]['cc'])?> макетов</td>
+		<td><?php echo intval($this->vars['allMaketUp'][0]['cc'])?> макетов</td>
+	</tr>
+	<tr>		
+		<td><?php echo intval($this->vars['allOffersAdd'][0]['cc'])?> товаров</td>
+		<td><?php echo intval($this->vars['allOffersDel'][0]['cc'])?> товаров</td>
+		<td><?php echo intval($this->vars['allOffersUp'][0]['cc'])?> товаров</td>
+	</tr>
+</table>
+<a href="/admin/historyitems" class="btn btn-primary">Посмотреть список изменений</a>

@@ -1,0 +1,77 @@
+<?php $errorMessages=array('title'=>'Введите заголовок','url'=>'Введите адрес(url)','position'=>'Введите позицию');?>
+<script>
+function addMenu()
+{
+	
+ 	jQuery.post(
+		'/admin/statmenu',
+		$('#addNewCont').serialize(),
+		function (json){
+		
+   		window.location.href="/admin/statmenu";
+
+   	},
+   	'json');
+}
+</script>
+<?if(isset($this->vars['contId'][0])):?>
+	<?$array=$this->vars['contId'][0];?>
+<?else :?>
+	<?$array=$this->vars['contId'];?>
+<?endif;?>
+<div class="topTile" style="margin-bottom:10px"> Изменение/добавление пунктов меню</div>
+<div style="SHowInPAnel">
+
+<div style="color:#993300;font-size:13px;width:750px;text-align:center;">
+	<?php if(count($this->vars['error'])>0):?>
+		<?php $u=0; while($u<count($this->vars['error'])):?>
+			<?php echo 'Ошибка!!!. '.$errorMessages[$this->vars['error'][$u]];?><br>
+		<?php $u++;?>
+		<?php endwhile;?>
+	<?php endif;?>
+	</div>
+	<form id="addNewCont" onsubmit="return false;" method="post">
+		<table cellpadding="1"  cellspacing="1" width=100%   class="table table-striped table-bordered table-condensed">
+		<input type="hidden" name="id" value="<?=$array['id'];?>">
+			<tr>				
+				<td class="par" width="160px" valign=top  >Заголовок:</td>
+				<td  class="parF" width="540px"  ><input type="text" name="title" value="<?php echo $array['title'];?>" style="width:350px;margin-bottom:0;"></td>				
+			</tr>			
+			<tr>				
+				<td  class="par" width="160px" valign=top  >url:</td>
+				<td  class="parF" width="540px"  >
+					<input type="text" name="url" value="<?php echo $array['url'];?>" style="width:350px;margin-bottom:0;"></td>	
+				</td>				
+			</tr>
+			
+			<tr>
+				
+				<td  class="par" width="160px" valign=top  >Позиция:</td>
+				<td  class="parF" width="540px"  >
+					<input type="text" name="position" value="<?php echo $array['position'];?>" style="width:50px;margin-bottom:0;">
+				</td>
+				
+			</tr>
+			<tr>
+				<td  class="par" colspan="2" valign=top  >Открыть ссылку в новом окне: 
+				<?php if( $array['target']==1):?>
+					<?$sel=' CHECKED ';?>
+				<?php else :?>
+					<?$sel=' ';?>
+				<?endif;?>
+				<input type="checkbox" <? echo $sel;?> name="target">
+				</td>
+			</tr>
+			<tr>
+				
+				
+			
+			<tr>
+				<input type="hidden"  name="upd">
+				<td   colspan=2 align=center ><input type="button" onclick="addMenu();return false;"  value="записать" style="margin-bottom:0;"></td>				
+				
+			</tr>
+			
+		</table>
+	</form>
+	</div>

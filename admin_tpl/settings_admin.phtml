@@ -1,0 +1,57 @@
+<script>
+var login = '<?=$this->vars['data']['login']?>';
+</script>
+<form class="form-horizontal" onsubmit="SetOptionShop('admin');return false;"; id="adminParamsForm">
+	<fieldset>
+		<legend>Изменение логина и пароля для входа в административную часть.</legend>
+		<div class="control-group">
+			<label class="control-label" for="input01">Логин:</label>
+			<div class="controls">
+				<input type="text" class="input-xlarge" id="input0" name="login" value="<?=$this->vars['data']['login']?>" onclick="jQuery(this).css('background','#fff');">
+				<span id="loginErrorText" class="alert-error" ></span>	
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="input01">Старый пароль:</label>
+			<div class="controls">
+				<input type="password" class="input-xlarge" id="input01" name="oldPassword" onclick="jQuery(this).css('background','#fff');">
+				<span id="oldPasswordErrorText" class="alert-error" ></span>	
+				<p class="help-block">Введите значение Вашего текущего пароля.</p>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="input02">Новый пароль:</label>
+			<div class="controls">
+				<input type="password" class="input-xlarge" id="input02" name="Password" onclick="jQuery(this).css('background','#fff');">
+				<span id="PasswordErrorText" class="alert-error" ></span>
+				<p class="help-block">Введите значение нового пароля.</p>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="input03">Повторите пароль:</label>
+			<div class="controls">
+				<input type="password" class="input-xlarge" id="input03" name="PasswordRe" onclick="jQuery(this).css('background','#fff');">
+				<span id="PasswordReErrorText" class="alert-error" ></span>
+				<p class="help-block">Введите еще раз значение нового пароля.</p>
+			</div>
+		</div>
+	</fieldset>
+
+	<div class="form-actions">
+		<button type="submit" class="btn btn-primary">Сохранить изменения</button>
+		<button class="btn" onclick="reset();" type="button">Сбросить</button>
+	</div>
+</form>
+
+<script>
+ function reset () {
+    var input0 = document.getElementById("input0");
+            input0.value = login;
+    var input1 = document.getElementById("input01");
+            input1.value = "";
+    var input2 = document.getElementById("input02");
+            input2.value = "";
+    var input3 = document.getElementById("input03");
+            input3.value = "";
+}
+</script>

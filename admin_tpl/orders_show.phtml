@@ -1,0 +1,71 @@
+<div class="onses" >
+ <div class="par"><b >Номер заказа:</b> <?php echo $this->vars['alls'][0]['id_zakaz'];?> <?if($this->vars['alls'][0]['id_zakaz']==$this->vars['alls'][0]['data']):?><span id="resend"><a href="javascript:if(confirm('Используется только в случае необходимости. Выслать заказ повторно?')) get('/admin/resend/Order/<?php echo $this->vars['alls'][0]['id'];?>','resend');">прислать повторно</a></span><?endif?></div>
+ <div class="par"><b>ФИО:</b>  <?php echo $this->vars['alls'][0]['fio'];?></div>
+ <div class="par"><b>Адрес:</b>  <?php echo $this->vars['alls'][0]['adres'];?></div>
+ <div class="par"><b>Телефон:</b>  <?php echo $this->vars['alls'][0]['tel'];?></div>
+ <div class="par"><b>Электронный адрес:</b> <?php echo $this->vars['alls'][0]['email'];?></div>
+
+  <div align=center>
+ <table cellpadding="1" cellspacing="1" style="margin-top:10px;" width=800px border=0 class="table table-striped table-bordered table-condensed" >
+    <tr>
+       <td width="270px" style="font-weight:bold;font-size:13px;color:#000;text-align:center;border-right:1px solid white;">Название</td>
+       <td style="font-weight:bold;font-size:13px;color:#000;text-align:center;border-right:1px solid white;">Модель</td>
+       <td style="font-weight:bold;font-size:13px;color:#000;text-align:center;border-right:1px solid white;">Р-р</td>
+       <td style="font-weight:bold;font-size:13px;color:#000;text-align:center;border-right:1px solid white;">Цена</td>
+       <td style="font-weight:bold;font-size:13px;color:#000;text-align:center;border-right:1px solid white;">Кол-во</td>
+       <td style="font-weight:bold;font-size:13px;color:#000;text-align:center;">Сумма</td>
+    </tr>
+    <?php $i=0; while($i<count($this->vars['offers_key'])) :?>
+        <tr>
+			<?$hand=0;?>
+			 <?php if(isset($this->vars['curt_offers'][$this->vars['offers_key'][$i]]['hand']) and $this->vars['curt_offers'][$this->vars['offers_key'][$i]]['hand']==1):?>
+				<?$hand=1;?>
+			 <?endif;?>
+			 
+			 <?if($this->vars['curt_offers'][$this->vars['offers_key'][$i]]['img_font']==0):?>
+				<?$imgShow=$this->LoadProdImageFutBack($this->vars['curt_offers'][$this->vars['offers_key'][$i]]['oldid'],$this->vars['curt_offers'][$this->vars['offers_key'][$i]]['path_to_img'],$this->vars['curt_offers'][$this->vars['offers_key'][$i]]['color_path'],'250',$hand,$this->vars['curt_offers'][$this->vars['offers_key'][$i]]['img_back']);?>
+			 <?else :?>
+				<?$imgShow=$this->LoadProdImageFut($this->vars['curt_offers'][$this->vars['offers_key'][$i]]['oldid'],$this->vars['curt_offers'][$this->vars['offers_key'][$i]]['path_to_img'],$this->vars['curt_offers'][$this->vars['offers_key'][$i]]['color_path'],'250',$hand,$this->vars['curt_offers'][$this->vars['offers_key'][$i]]['img_font']);?>
+			 <?endif;?>
+			
+            <td bgcolor="#ffffff" width="270px" style="font-weight:bold;font-size:13px;text-align:center;border-right:1px solid white;">
+              <div class="adm-par"><?php echo $this->vars['curt_offers'][$this->vars['offers_key'][$i]]['name'];?></div>
+              <div style="padding:5px;"><img src="<?php echo $imgShow?>" width="70"></div>
+            </td>
+            <td bgcolor="#ffffff" style="font-weight:bold;font-size:13px;text-align:center;border-right:1px solid white;">
+              <div class="adm-par">
+                       <?php echo $this->vars['curt_offers'][$this->vars['offers_key'][$i]]['sexname'];?> <br>
+                       <?php if(isset($this->vars['curt_offers'][$this->vars['offers_key'][$i]]['hand'])):?>
+				    			<?php if($this->vars['curt_offers'][$this->vars['offers_key'][$i]]['hand']==0):?>
+                                  (короткий рукав)
+                                  <?php else :?>
+                                  (длинный рукав)
+                                  <?php endif;?>
+
+                                  <?php endif;?>
+              </div>
+            </td>
+            <td bgcolor="#ffffff" style="font-weight:bold;font-size:13px;text-align:center;border-right:1px solid white;">
+                  <?php if(isset($this->vars['curt_offers'][$this->vars['offers_key'][$i]]['sizes']))?>
+                  <div class="adm-par"><?php echo $this->vars['curt_offers'][$this->vars['offers_key'][$i]]['sizes'];?></div>
+            </td>
+            <td bgcolor="#ffffff" style="font-weight:bold;font-size:13px;text-align:center;border-right:1px solid white;">
+                 <div class="adm-par"><?php echo $this->vars['curt_offers'][$this->vars['offers_key'][$i]]['prices'];?></div>
+            </td>
+            <td bgcolor="#ffffff" style="font-weight:bold;font-size:13px;text-align:center;border-right:1px solid white;">
+                 <div class="adm-par"><?php echo $this->vars['curt_offers'][$this->vars['offers_key'][$i]]['amount'];?></div>
+            </td>
+            <td bgcolor="#ffffff" style="font-weight:bold;font-size:13px;text-align:center;">
+                 <div class="adm-par"><?php echo $this->vars['curt_offers'][$this->vars['offers_key'][$i]]['amount'] * $this->vars['curt_offers'][$this->vars['offers_key'][$i]]['prices'];?> руб.</div>
+            </td>
+        </tr>
+    <?php $i++;?>
+    <?php endwhile;?>
+<tr>
+       <td colspan="5" style="font-weight:bold;font-size:13px;color:#000;text-align:center;border-right:1px solid white;">Итого:</td>
+       <td align=right style="font-weight:bold;font-size:13px;color:#000;text-align:center;"><?php echo $this->vars['alls'][0]['summasdost'];?> руб.</td>
+</tr>
+ </table>
+   </div >
+
+</div>

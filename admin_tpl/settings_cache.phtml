@@ -1,0 +1,81 @@
+<script>
+var dir = '<?=$this->vars['data']['dir']?>';
+var types = '<?=$this->vars['data']['typeCaching']?>';
+var server = '<?=$this->vars['data']['CachingIp']?>';
+var port = '<?=$this->vars['data']['CachingPort']?>';
+</script>
+<form class="form-horizontal" onsubmit="SetOptionShop('cache');return false;"; id="cacheParamsForm">
+	<fieldset>
+		<legend>Изменение параметров кеширования.</legend>
+		<div class="control-group">
+			<label class="control-label" for="input0">Тип кеширования:</label>
+			<div class="controls">
+				<select name="typeCaching" id="input0" onchange="typeRemission(this.value);">
+					<option value="file" <?if($this->vars['data']['typeCaching']=='file'):?> selected <?endif;?>>файловый кеш</option>
+					<option value="memory" <?if($this->vars['data']['typeCaching']=='memory'):?> selected <?endif;?>>memcache</option>
+				</select>				
+				<span id="typeCachingErrorText" class="alert-error" ></span>	
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="input01">Путь к папке для хранения кеша:</label>
+			<div class="controls">
+				<input type="input" class="input-xlarge" id="input01" name="dir" value="<?=$this->vars['data']['dir']?>" onclick="jQuery(this).css('background','#fff');">
+				<span id="dirErrorText" class="alert-error" ></span>	
+				<p class="help-block">Введите путь к папке для хранения кеша.</p>
+			</div>
+		</div>
+		
+		<div class="control-group" id="memServer" <?if($this->vars['data']['typeCaching']!='memory'):?> style="display:none;" <?endif;?>>
+			<label class="control-label" for="input02">Адрес сервера memcache:</label>
+			<div class="controls">
+				<input type="input" class="input-xlarge" id="input02" name="CachingIp" value="<?=$this->vars['data']['CachingIp']?>" onclick="jQuery(this).css('background','#fff');" <?if($this->vars['data']['typeCaching']!='memory'):?> disabled <?endif;?>>
+				<span id="CachingIpErrorText" class="alert-error" ></span>
+				<p class="help-block">Введите адрес сервера memcache.</p>
+			</div>
+		</div>
+		<div class="control-group" id="memPort" <?if($this->vars['data']['typeCaching']!='memory'):?> style="display:none;" <?endif;?>>
+			<label class="control-label" for="input03">Порт :</label>
+			<div class="controls">
+				<input type="input" class="input-xlarge" id="input03" name="CachingPort" value="<?=$this->vars['data']['CachingPort']?>" onclick="jQuery(this).css('background','#fff');" <?if($this->vars['data']['typeCaching']!='memory'):?> disabled <?endif;?>>
+				<span id="CachingPortErrorText" class="alert-error" ></span>
+				<p class="help-block">Введите порт.</p>
+			</div>
+		</div>
+	</fieldset>
+
+	<div class="form-actions">
+		<button type="submit" class="btn btn-primary">Сохранить изменения</button>
+		<button class="btn" onclick="resetS();" type="button">Сбросить</button>
+	</div>
+</form>
+
+<script>
+ function resetS () {
+	
+	window.location.href='/admin/cachereload';
+}
+function typeRemission(val)
+{
+	$('#memServer').css('display','none');
+	$('#memServer input').attr('disabled','true');
+	$('#memPort').css('display','none');
+	$('#memPort input').attr('disabled','true');
+	$.post('/admin/memtest',{types:val},function(json){
+		if(json.type=='memory')
+		{
+			if(json.act==1)
+			{
+				$('#memServer').css('display','block');
+				$('#memServer input').removeAttr('disabled');
+				$('#memPort').css('display','block');
+				$('#memPort input').removeAttr('disabled');
+			}
+			else
+			{
+				alert('На вашем сервере не установлена служба memchached.');
+			}
+		}
+	},"json")
+}
+</script>

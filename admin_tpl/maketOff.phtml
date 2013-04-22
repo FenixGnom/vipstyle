@@ -1,0 +1,27 @@
+<?function fileOpen($id)
+{
+	$path=dirname(__FILE__).'/../update/offers_'.$id.'.dat';		
+	if(file_exists($path))
+		return 	file_get_contents($path);
+	else
+		return '';
+}
+?>
+
+<?=$this->vars['paging']?>
+<table class="table table-striped table-bordered table-condensed" style="width:60%;">
+   <tr ><th>id</th><th>Название</th><th>Информация</th></tr>
+   <?if(count($this->vars['of'])>0):?>
+   <?for($i=0;$i<count($this->vars['of']);$i++):?>
+		 <tr >
+			<td><?=$this->vars['of'][$i]['artcl']?></td>			
+			<td><?=fileOpen($this->vars['of'][$i]['artcl'])?></td>			
+			<td><?=$this->vars['of'][$i]['info']?></td>
+		 </tr>
+   <?endfor;?> 
+   <?else:?>
+		<tr >
+			<td colspan="5">Нет информации</td>			
+		 </tr>
+   <?endif;?>
+</table>

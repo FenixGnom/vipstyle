@@ -1,0 +1,59 @@
+<script>
+var partnerid='<?=$this->vars['data']['partnerid']?>';
+var salt='<?=$this->vars['data']['salt']?>';
+</script>
+<form class="form-horizontal" onsubmit="SetOptionShop('partner');return false;"; id="partnerParamsForm">
+		<fieldset>
+			<div class="control-group">
+				<label class="control-label" for="input20">Партнерский ref код:</label>
+				<div class="controls">
+					<input type="text" onclick="jQuery(this).css('background','#fff');" class="input-xlarge" id="input20" name="partnerid" value="<?=$this->vars['data']['partnerid']?>">
+					<span id="partneridErrorText" class="alert-error" ></span>
+					<p class="help-block">Ref код полученый при регистрации в партнерской программе "Всемайки.ру".</p>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="input21">Партнерский salt код:</label>
+				<div class="controls">
+					<input type="text" onclick="jQuery(this).css('background','#fff');" class="input-xlarge" id="input21" name="salt" value="<?=$this->vars['data']['salt']?>">
+					<span id="saltErrorText" class="alert-error" ></span>
+					<p class="help-block">Salt код полученый при регистрации в партнерской программе "Всемайки.ру".</p>
+				</div>
+			</div>
+		</fieldset>
+
+		<div class="form-actions">
+			<button type="submit" class="btn btn-primary">Сохранить изменения</button>
+			<button class="btn" onclick="reset();" type="button">Сбросить</button>
+		</div>
+</form>
+
+<script>
+function reset () {
+    var input1 = document.getelementbyid ('input20');
+	input1.value = partnerid;
+	var input2 = document.getelementbyid ('input21');
+	input2.value = salt;
+}
+</script>
+<script>
+function checkpartner()
+{
+var a='<?=$this->vars['data']['partnerid']?>';
+var anew=$('#input20').val();
+
+var s='<?=$this->vars['data']['salt']?>';
+var snew=$('#input21').val();
+
+
+
+if(a==anew && s==snew)
+	{
+	return false;
+	}
+else
+		{
+		return true;
+		}
+}
+</script>

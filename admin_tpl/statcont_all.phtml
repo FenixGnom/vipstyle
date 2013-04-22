@@ -1,0 +1,80 @@
+<script>
+function DelsCont(id)
+{   if(!id)
+	id=$('#delSeoMainNah').val();
+	jQuery.ajax({
+            type: "GET",
+            url: '/admin/updatestatconshow/act/del/id/'+id,
+            success: function(html){               
+                      window.location.href='/admin/statcon';
+            }
+
+      });
+}
+</script>
+
+
+<div class="page-header">
+    <h2>Статический контент</h2>
+    <small>Управление статическим контентом.</small>
+</div>
+<div style="margin-bottom:10px;"><a class="add" href="/admin/updatestatconshow/act/add">Добавить страницу</a></div>
+<?$countAll=count($this->vars['allStat']);?>
+<?php echo $this->vars['paging']?>
+<table class="table table-striped table-bordered table-condensed">
+	<thead>
+        <tr>
+            <th width="5%" style="text-align: center;">&nbsp;</th>
+            <th width="35%" style="text-align: center;">Название</th>
+            <th width="25%" style="text-align: center;">url</th>
+            <th width="5%" style="text-align: center;">&nbsp;</th>
+            
+        </tr>
+		<?if($countAll>0):?>
+			<tbody>
+				<?php $i=0; while($i<$countAll) :?>
+					<tr>
+						<td style="text-align: center;">
+							<a href="/admin/updatestatconshow/act/update/id/<?php echo $this->vars['allStat'][$i]['id'];?>" border="0"><img src="<?php echo $this->LoadResource('image','b_edit.png');?>"border="0"/></a>
+						</td>
+						<td style="text-align: center;"><?php echo $this->vars['allStat'][$i]['title'];?></td>
+						<td style="text-align: center;">/docs/<?php echo $this->vars['allStat'][$i]['url'];?>.html</td>
+						<td style="text-align: center;">
+							<img src="<?php echo $this->LoadResource('image','error.png');?>" onclick="show(<?php echo $this->vars['allStat'][$i]['id'];?>)" title="Удалить" class="link" />
+						</td>								
+					</tr>
+				<?$i++;endwhile;?>
+			</tbody>
+		<?else :?>
+			<tbody>
+				<tr>
+					<td colspan="4" style="text-align: center;">Нет данных</td>
+					
+				</tr>
+			</tbody>
+		<?endif;?>
+    </thead>
+</table>
+
+<div class="modal hide fade" id="myModal">
+    <div class="modal-header">
+    <button class="close" data-dismiss="modal">×</button>
+    <h3 id="link"></h3>
+    </div>
+    <div class="modal-body" id="modalTextIn" style="text-align: center;">
+	<h4 style="padding: 5px 0 5px 0;">Вы действительно хотите удалить?</h4>
+	<input type="hidden" id="delSeoMainNah" />
+    <button type="button" onclick="DelsCont()" class="btn btn-primary">Удалить</button> 
+	<button type="button" class="btn btn-primary" data-dismiss="modal">Отмена</button>
+    </div>
+    <div class="modal-footer">
+    </div>
+    </div>
+
+<script>	
+function show(id)
+{
+	$('#myModal').modal('show');
+	$('#delSeoMainNah').val(id);
+}
+</script>

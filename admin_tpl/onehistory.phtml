@@ -1,0 +1,62 @@
+<div class="page-header">
+   <h2>Информация об обновлении каталога от <?=date('d-m-Y G:i',$this->vars['date'])?></h2>
+   <small>С помощью данного раздела Вы сможете посмотреть, какие изменения были произведены при обновлении каталога.</small>
+</div>
+
+<div class="container">
+    <span>Обозначения: </span>
+    <span class="badge badge-info">Изменено</span>
+    <span class="badge badge-important">Удалено</span>
+    <span class="badge badge-success">Добавлено</span>
+</div>
+<hr />
+
+<div class="tabbable tabs-left">
+    <ul class="nav nav-tabs" >
+        <li class="active"><a href="#maket" data-toggle="tab">Макеты
+			<span class="badge badge-info"><? echo $this->vars['allData']['allMaketUp'][0]['cc'] ?></span>
+            <span class="badge  badge-important"><?=$this->vars['allData']['allMaketDel'][0]['cc']?></span>
+            <span class="badge badge-success"><?=$this->vars['allData']['allMaketAdd'][0]['cc']?></span>
+			</a> 
+		</li>
+        <li class=""><a href="#offers" data-toggle="tab">Товары
+		<span class="badge badge-info"><?=$this->vars['allData']['allOffersUp'][0]['cc']?></span>
+            <span class="badge  badge-important"><?=$this->vars['allData']['allOffersDel'][0]['cc']?></span>
+            <span class="badge badge-success"><?=$this->vars['allData']['allOffersAdd'][0]['cc']?></span>			
+            </a> 
+		</li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="maket">
+           
+        </div>
+
+        <div class="tab-pane" id="offers">
+            
+        </div>
+    </div>
+</div>
+<script>
+var idUp=<?=$this->vars['idlob']?>;
+function offers(p)
+{
+	$('#offers').html('Идет загрузка данных');
+	if(!p)
+	p=1;
+	$.post('/admin/offersadd/idv/'+idUp+'/page/'+p,{s:0},function(json){
+		$('#offers').html(json.h);
+	},"json");
+}
+function maket(p)
+{
+	$('#maket').html('Идет загрузка данных');
+	if(!p)
+	p=1;
+	$.post('/admin/maketadd/idv/'+idUp+'/page/'+p,{s:0},function(json){
+		$('#maket').html(json.h);
+	},"json");
+}
+
+offers();
+maket();
+</script>

@@ -1,0 +1,93 @@
+<?php $errorMessages=array('title'=>'Введите название','text'=>'Введите текст');?>
+<script>
+function addCont()
+{
+	
+	$('#Error_text').html('');
+	$('#Error_title').html('');	
+	$('#content').val(tinyMCE.get('content').getContent());
+ 	jQuery.post(
+		'/admin/statcon',
+		$('#addNewCont').serialize(),
+		function (json){		
+   		if(json.act==1)
+			window.location.href='/admin/statcon';
+		else{
+			if(json.error.text)
+				$('#Error_text').html('Введите текст');
+			if(json.error.title)
+				$('#Error_title').html('Введите название');	
+		}
+
+   	},
+   	'json');
+}
+</script>
+<?if(isset($this->vars['contId'][0])):?>
+	<?$array=$this->vars['contId'][0];?>
+<?else :?>
+	<?$array=$this->vars['contId'];?>
+<?endif;?>
+
+<div class="page-header">
+    <h2>Статический контент</h2>
+    <small><?if($array['id']>0):?>Изменение<?else :?>Добавление<?endif;?> статической страницы.</small>
+</div>
+	
+	<form id="addNewCont" onsubmit="return false;" method="post">
+		<table cellpadding="0"  cellspacing="0" class="table table-striped table-bordered table-condensed">
+		<input type="hidden" name="id" value="<?=$array['id'];?>">
+			<tr>				
+				<th   width="30%" valign=top class="par">Название:<div id="Error_title" class="alert-error"></div></th>
+				<td   width="70%" class="parF"><textarea  name="title" style="width:90%;height:40px;"><?php echo $array['title'];?></textarea></td>				
+			</tr>			
+			<tr>				
+				<th   width="30%" valign=top class="par">Текст:<div id="Error_text" class="alert-error"></div></th>
+				<td   width="70%" class="parF">
+				<script type="text/javascript">startTinyMCE ('content');</script>
+				<textarea  name="text" id="content" style="width:90%;height:200px;"><?php echo stripslashes($array['text']);?></textarea></td>				
+			</tr>
+			
+			<tr>
+				
+				<th   width="30%" valign=top class="par">Keywords:</th>
+				<td   width="70%" class="parF"><textarea  name="keywords" style="width:90%;height:200px;"><?php echo $array['keywords'];?></textarea></td>
+				
+			</tr>
+			<tr>
+				
+				<th   width="30%" valign=top class="par">Добавить в меню:</th>
+				<td   width="70%" class="parF">
+					<?php if($array['menu']==1):?>
+						<?php $chek=' checked ';?>
+					<?php else :?>
+						<?php $chek='';?>
+					<?php endif;?>
+					<input type="checkbox" name="addtomenu" value="1" <?php echo $chek;?>>
+				</td>
+				
+			</tr>
+			<tr>
+				
+				<th   width="30%" valign=top class="par">Вывести этот текст на главной странице:</th>
+				<td   width="70%" class="parF">
+					<?php if($array['start']==1):?>
+						<?php $chek=' checked ';?>
+					<?php else :?>
+						<?php $chek='';?>
+					<?php endif;?>
+					<input type="checkbox" name="start" value="1" <?php echo $chek;?>>
+				</td>
+				
+			</tr>
+			
+			<tr>
+				<input type="hidden"  name="upd">
+				<td   colspan=2 style="text-align:center;"> <button class="btn btn-primary" type="submit" onclick="addCont();"> <?if($array['id']>0):?>Изменить<?else :?>Добавить<?endif;?></button></td>
+				
+				
+			</tr>
+			
+		</table>
+	</form>
+	

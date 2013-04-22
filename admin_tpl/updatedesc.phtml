@@ -1,0 +1,10 @@
+<td colspan=4 class="rows" align=center>
+    <form id="updates" onSubmit="UpdateDesc('<?php echo $this->vars['objects']?>'); return false;" method="post">
+        <input type="hidden" name="id" value="<?php echo $this->vars['iddesc'];?>">
+        <input type="hidden" name="act" value="upd">       
+        Описание<br>
+        <textarea name="desc" style="width:90%;height:100px;"><?php echo $this->vars['x'][0]['desc'];?></textarea>        
+        <br />
+        <input type="submit" value="Изменить">
+    </form>
+</td>

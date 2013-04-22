@@ -1,0 +1,625 @@
+<!-- Заголовок страницы -->
+<div class="page-header">
+    <h2>Обновление данных каталога</h2>
+    <small>С помощью данного раздела Вы сможете произвести обновление данных каталога, товаров, цен и способов доставки. Данные будут загружены с сервера "Всемайки".</small>
+</div>
+<!-- /Заголовок страницы -->
+<script>
+	$('#messageAdmin').css('display','none');
+</script>
+<ul class="thumbnails">
+    <li class="span4">
+        <div class="thumbnail">
+            <h4>Последнее обновление:</h4><br />
+            <br />
+			
+            <table class="table table-striped" id="inFersd">
+				<?$sS='display:none;';?>
+				<?if(isset($this->vars['s'][0]['date_xml'])):?>
+					<?$sS='display:block;';?>
+					<tr>
+						<td>Основы</td>
+						<td><?=$this->vars['s'][0]['date_xml']?></td>
+					</tr>
+					<tr>
+						<td>Макеты</td>
+						<td><?=$this->vars['s'][0]['date_xml']?></td>
+					</tr>
+					<tr>
+						<td>Доставки</td>
+						<td><?=$this->vars['s'][0]['date_xml']?></td>
+					</tr>
+					
+				<?else :?>
+					<tr>
+						<td colspan="2">Обновление не осуществлялось</td>						
+					</tr>
+				<?endif;?>
+            </table>
+           <a style="<?=$sS?>width:140px;margin:auto;" id="logHrefing" href="/admin/historyinfo" class="btn btn-primary">История обновлений</a>
+
+        </div>
+    </li>
+
+    <li class="span8">
+        <div class="thumbnail">
+            <div id="up_info" class="show">
+                <h4>Доступное обновление:</h4><br />
+                <br />
+				<?if($this->vars['upn']['dates']!=0):?>
+                <table class="table table-striped">
+                    <tr>
+                        <th>Основы</th>
+                        <th>Макеты</th>
+                        <th>Доставки</th>
+                    </tr>
+                    <tr>
+                        <td><?=$this->vars['upn']['dates']?></td>
+                        <td><?=$this->vars['upn']['dates']?></td>
+                        <td><?=$this->vars['upn']['dates']?></td>
+                    </tr>
+                </table>
+				
+				<?endif;?>
+                <?if($this->vars['upn']['dates']!=0 and $this->vars['upn']['dates']!=2):?>
+				<a href="#" class="btn btn-primary disabled" id="bt_upd">Обновить</a>
+				<?else:?>
+					<p>Доступных обновлений нет.</p>
+					<?if($this->vars['v'][0]['cc']>0):?>
+						<a href="/admin/historyitems" class="btn btn-primary">Посмотреть список изменений последнего обновления</a>
+					<?endif;?>
+				<?endif;?>
+            </div>
+			
+			<div id="res_up" class="hide">
+                <h4>Ошибка:</h4><br />
+                <div class="alert alert-error">
+                    <strong>Внимание!</strong><br /> <span id="upperText"></span>
+                </div>
+
+                
+            </div>
+			
+            <div id="up_progress1" class="hide">
+                <h4>Обновление данных:</h4><br />
+                <div class="alert alert-error">
+                    <strong>Внимание!</strong><br /> Не закрывайте данную страницу и не переходите на другие страницы до окончания процесса обновления.
+                </div>
+
+                <p>Общий ход выполнения:</p>
+                <div class="progress progress-info" style="margin-bottom: 9px;">
+                    <div class="bar" style="width: 0%"></div>
+                </div>
+
+                <p>Текущая операция: Создание временных данных</p>
+            </div>
+			
+			
+			
+            <div id="up_progress2" class="hide">
+                <h4>Обновление данных:</h4><br />
+                <div class="alert alert-error">
+                    <strong>Внимание!</strong><br /> Не закрывайте данную страницу и не переходите на другие страницы до окончания процесса обновления.
+                </div>
+
+                <p>Общий ход выполнения:</p>
+                <div class="progress progress-info" style="margin-bottom: 9px;position:relative;">
+                    <div class="bar"  id="procentUpload" style="width: 5%"></div>
+					<div id="procentUploadText" style="position:absolute;top:1px;left:0px;z-index:1000;width:99%;font-size:16px;text-align:center;font-weight:bold;">5%</div>
+                </div>
+
+                <p>Текущая операция: Получение xml файла каталога товаров. </p>
+            </div>
+			
+			
+			<div id="up_progress3" class="hide">
+                <h4>Обновление данных:</h4><br />
+                <div class="alert alert-error">
+                    <strong>Внимание!</strong><br /> Не закрывайте данную страницу и не переходите на другие страницы до окончания процесса обновления.
+                </div>
+
+                <p>Общий ход выполнения:</p>
+                <div class="progress progress-info" style="margin-bottom: 9px;position:relative;">
+                    <div class="bar" style="width: 10%"></div>
+					<div style="position:absolute;top:1px;left:0px;z-index:1000;width:99%;font-size:16px;text-align:center;font-weight:bold;">10%</div>
+                </div>
+
+                <p>Текущая операция: Получение xml файла типов доставки</p>
+            </div>
+            
+			
+			<div id="up_progress4" class="hide">
+                <h4>Обновление данных:</h4><br />
+                <div class="alert alert-error">
+                    <strong>Внимание!</strong><br /> Не закрывайте данную страницу и не переходите на другие страницы до окончания процесса обновления.
+                </div>
+
+                <p>Общий ход выполнения:</p>
+                <div class="progress progress-info" style="margin-bottom: 9px;position:relative;">
+                    <div class="bar" style="width: 15%"></div>
+					<div style="position:absolute;top:1px;left:0px;z-index:1000;width:99%;font-size:16px;text-align:center;font-weight:bold;">15%</div>
+                </div>
+
+                <p>Текущая операция: Разбор xml файла каталога товаров</p>
+            </div>
+            
+			<div id="up_progress5" class="hide">
+                <h4>Обновление данных:</h4><br />
+                <div class="alert alert-error">
+                    <strong>Внимание!</strong><br /> Не закрывайте данную страницу и не переходите на другие страницы до окончания процесса обновления.
+                </div>
+
+                <p>Общий ход выполнения:</p>
+                <div class="progress progress-info" style="margin-bottom: 9px;position:relative;">
+                    <div class="bar" style="width: 20%"></div>
+					<div style="position:absolute;top:1px;left:0px;z-index:1000;width:99%;font-size:16px;text-align:center;font-weight:bold;">20%</div>
+                </div>
+
+                <p>Текущая операция: Разбор xml файла каталога товаров</p>
+            </div>
+            
+			<div id="up_progress6" class="hide">
+                <h4>Обновление данных:</h4><br />
+                <div class="alert alert-error">
+                    <strong>Внимание!</strong><br /> Не закрывайте данную страницу и не переходите на другие страницы до окончания процесса обновления.
+                </div>
+
+                <p>Общий ход выполнения:</p>
+                <div class="progress progress-info" style="margin-bottom: 9px;position:relative;">
+                    <div class="bar" style="width: 25%"></div>
+					<div style="position:absolute;top:1px;left:0px;z-index:1000;width:99%;font-size:16px;text-align:center;font-weight:bold;">25%</div>
+                </div>
+
+                <p>Текущая операция: Разбор xml файла каталога товаров</p>
+            </div>
+            
+			<div id="up_progress7" class="hide">
+                <h4>Обновление данных:</h4><br />
+                <div class="alert alert-error">
+                    <strong>Внимание!</strong><br /> Не закрывайте данную страницу и не переходите на другие страницы до окончания процесса обновления.
+                </div>
+
+                <p>Общий ход выполнения:</p>
+                <div class="progress progress-info" style="margin-bottom: 9px;position:relative;">
+                    <div class="bar" style="width: 30%"></div>
+					<div style="position:absolute;top:1px;left:0px;z-index:1000;width:99%;font-size:16px;text-align:center;font-weight:bold;">30%</div>
+                </div>
+
+                <p>Текущая операция: Разбор xml файла каталога товаров</p>
+            </div>
+			
+			<div id="up_progress8" class="hide">
+                <h4>Обновление данных:</h4><br />
+                <div class="alert alert-error">
+                    <strong>Внимание!</strong><br /> Не закрывайте данную страницу и не переходите на другие страницы до окончания процесса обновления.
+                </div>
+
+                <p>Общий ход выполнения:</p>
+                <div class="progress progress-info" style="margin-bottom: 9px; position:relative;">
+                    <div class="bar" style="width: 35%"></div>
+					<div style="position:absolute;top:1px;left:0px;z-index:1000;width:99%;font-size:16px;text-align:center;font-weight:bold;"><span id="prct">35</span>%</div>
+                </div>
+
+                <p>Текущая операция:  Запись информации в Базу Данных. Оставшееся время: <span id="timeArround">-- --</span> </p>
+            </div>
+
+			
+			
+			<div id="up_progress12" class="hide">
+                <h4>Обновление данных:</h4><br />
+                <div class="alert alert-error">
+                    <strong>Внимание!</strong><br /> Не закрывайте данную страницу и не переходите на другие страницы до окончания процесса обновления.
+                </div>
+
+                <p>Общий ход выполнения:</p>
+                <div class="progress progress-info" style="margin-bottom: 9px;position:relative;">
+                    <div class="bar" style="width: 85%"></div>
+					<div style="position:absolute;top:1px;left:0px;z-index:1000;width:99%;font-size:16px;text-align:center;font-weight:bold;">85%</div>
+                </div>
+
+                <p>Текущая операция: Сбор информации об обновлении</p>
+            </div>
+			
+			<div id="up_progress13" class="hide">
+                <h4>Обновление данных:</h4><br />
+                <div class="alert alert-error">
+                    <strong>Внимание!</strong><br /> Не закрывайте данную страницу и не переходите на другие страницы до окончания процесса обновления.
+                </div>
+
+                <p>Общий ход выполнения:</p>
+                <div class="progress progress-info" style="margin-bottom: 9px;position:relative;">
+                    <div class="bar" style="width: 90%"></div>
+					<div style="position:absolute;top:1px;left:0px;z-index:1000;width:99%;font-size:16px;text-align:center;font-weight:bold;">90%</div>
+                </div>
+
+                <p>Текущая операция: Сбор информации об обновлении</p>
+            </div>
+			
+			<div id="up_progress14" class="hide">
+                <h4>Обновление данных:</h4><br />
+                <div class="alert alert-error">
+                    <strong>Внимание!</strong><br /> Не закрывайте данную страницу и не переходите на другие страницы до окончания процесса обновления.
+                </div>
+
+                <p>Общий ход выполнения:</p>
+                <div class="progress progress-info" style="margin-bottom: 9px;position:relative;">
+                    <div class="bar" style="width: 95%"></div>
+					<div style="position:absolute;top:1px;left:0px;z-index:1000;width:99%;font-size:16px;text-align:center;font-weight:bold;">95%</div>
+                </div>
+
+                <p>Текущая операция: Завершение операции обновления</p>
+            </div>
+            <div id="up_final" class="hide">
+                <h4>Обновление данных успешно произведено:</h4><br />
+
+                <span id="insInfo"></span>				
+                
+            </div>
+        </div>
+        <script>
+			var timerSArray=new Array();
+            $(function(){
+                $('#bt_upd').removeClass('disabled');
+                $('#bt_upd').click( function(){
+				$('#up_info').hide();
+				$('#markhron').css('display','block');
+                    $('#up_progress1').show();                    
+					createTemp();
+
+			  });
+            }, 1000);
+
+			var countOffers=0;
+			var startProcentUpdate=5;
+			function createTemp()
+			{			
+				$.post('/cron/tempdata',{},function(json){
+					if(json.act==1)
+						upXml();				
+					else
+					{
+						$('#up_progress1').hide();
+						NoLoadings(json.error,1);
+						return;
+					}
+				},"json");
+			}
+			function upXml(first,last)
+			{
+				if(!first)
+				var first=1;
+				if(!last)
+				var last=1000000;
+				
+			
+				$('#up_progress1').hide();
+				$('#up_progress2').show();	
+				$.post('/cron/catalogdata',{first:first,last:last},function(json){
+				
+				if (json.first)
+					{
+						upXml(json.first,json.last);
+						if(json.procent)
+						{
+							startProcentUpdate=startProcentUpdate+1;
+							
+							$('#procentUpload').css('width',startProcentUpdate+'%');
+							$('#procentUploadText').html(startProcentUpdate+'%');
+						}
+					}
+				else
+					{
+					if(json.act==1)
+						delivery();
+					else
+						{	
+							$('#up_progress2').hide();
+							if(json.act==2)
+								NoLoadings('Не удалось соединиться с сервером vsemayki.ru',1);
+							if(json.act==3)
+								NoLoadings('Не удалось соединиться с сервером vsemayki.ru',1);
+							if(json.act==4)
+								NoLoadings(json.error,1);
+							if(json.act==5)
+								NoLoadings(json.error,1);	
+						}	
+					}
+					
+				},"json");
+			}
+			function delivery()
+			{
+				$('#up_progress2').hide();
+				$('#up_progress3').show();
+				$.post('/cron/deliverydata',{},function(json){
+					if(json.act==1)
+					{	
+						createParts();			
+					}
+					else
+					{
+						$('#up_progress3').hide();
+						NoLoadings(json.error,1);
+						return;
+					}
+				},"json");
+			}
+			
+			function createParts()
+			{
+				$('#up_progress3').hide();
+				$('#up_progress4').show();
+			$.post('/cron/partpars',{},function(json){
+					if(json.act==1)
+					{	
+						countOffers=json.of;
+						Notification();
+					}
+					else
+					{
+						$('#up_progress4').hide();
+						NoLoadings(json.error,1);
+						return;
+					}
+				},"json");
+			}
+			function Notification()
+			{
+				$('#up_progress4').hide();
+				$('#up_progress5').show();
+				$.post('/cron/notifacition',{},function(json){
+				if(json.act==1)
+				{	
+					if(json.vers!='')
+					{			
+				
+						$('#messageUp').html(json.text+'<br /><span style="color:red;"><b>Внимание!</b><br /><span style="color:#000;font-weight:bold;">'+json.vers+'</span></span>');
+					}
+					
+					updateCateg();
+				}
+				
+				},"json");
+			}
+			function updateCateg()
+			{
+				$('#up_progress5').hide();
+				$('#up_progress6').show();
+				$.post('/cron/updatecat',{},function(json){
+					
+					if(json.act==1)
+					updateType();
+					else
+					{
+						$('#up_progress6').hide();
+						NoLoadings(json.error,1);
+						return;
+					}
+				},"json");
+			}
+			function updateType()
+			{
+				$('#up_progress6').hide();
+				$('#up_progress7').show();
+				$.post('/cron/updatetype',{},function(json){
+					
+					if(json.act==1)	
+						updateCatalog();					
+					else{
+						$('#up_progress7').hide();
+						NoLoadings(json.error,1);
+						return;
+					}	
+				},"json");
+			}
+	        
+			
+			function updateCatalog(id,time,col)
+			{
+				if(countOffers>0)
+				{
+					
+					if(!id)
+					{
+						id=1;
+						
+						$('#up_progress7').hide();
+						$('#up_progress8').show();
+					}
+					if(!time)
+						time=0;
+					if(!col)
+						col=0;
+					$.post('/cron/updatecatalog',{m:id,time:time,all:countOffers,cc:col},function(json){
+					if(json.act==1)
+					{
+						
+						
+						if(json.percent>20)
+						{				
+						
+							if(json.percent>=40)
+							{
+								if(json.percent>=60)
+								{
+									if(json.percent>=80)
+									{
+										
+											$('.bar').css('width','75%');
+											$('#prct').html('75');
+											
+									}
+									else
+									{
+										$('.bar').css('width','65%');
+										$('#prct').html('65');
+									}		
+								}
+								else
+								{
+									$('.bar').css('width','55%');
+									$('#prct').html('55');
+								}								
+							}
+							else
+							{
+								$('.bar').css('width','45%');
+								$('#prct').html('45');
+							}							
+						}
+						if(json.next>1)			
+							$('#timeArround').html(calcTimeUpdate(json.next,json.time));
+						
+						updateCatalog(json.next,json.time,json.cc);
+					}
+					if(json.act==2)
+						infoUpdate();
+					if(json.act==5)
+					{	
+						$('#up_progress8').hide();						
+						NoLoadings(json.error,1);}
+						
+						//updateEnd(json.cc,json.time);
+						
+					},"json");
+				}
+				
+			}
+			function infoUpdate()
+			{
+				$('#up_progress8').hide();
+				$('#up_progress12').show();
+				
+					$.post('/cron/endupdate',{},function(json){
+					if(json.act==1)
+						infoUpdateDel();
+					if(json.act==11)
+					{
+						infoUpdatePage(json.allcount,0);
+					}										
+					else{
+						
+						$('#up_progress12').hide();
+						NoLoadings(json.error,1);
+					}
+				},"json");
+			} 
+			function infoUpdateDel()
+			{	
+				$('#up_progress12').hide();
+				$('#up_progress13').show();
+				$.post('/cron/enddel',{},function(json){
+				if(json.act==1)
+					updateEnd();
+				if(json.act==11){
+					infoDelPage(json.allcount,0)
+				}	
+				else{
+					$('#up_progress13').hide();
+					NoLoadings(json.error,1);
+				}	
+				},"json");
+			} 
+			function updateEnd(count,t)
+			{
+				$('#up_progress13').hide();
+				$('#up_progress14').show();
+			
+				$.post('/cron/delcache',{},function(json){
+				if(json.act==1){					
+					showInfo();
+					$('#markhron').css('display','none');
+					}
+					else{
+						$('#up_progress14').hide();
+						NoLoadings(json.error,1);
+					}
+				},"json");
+			}
+			function showInfo()
+			{
+				$.post('/admin/showinfo',{},function(json){
+					$('#up_progress14').hide();
+					$('#up_final').show();
+					$('#insInfo').html(json.h);
+					$('#messageAdmin').remove();
+				},"json");
+			}
+			function NoLoadings(html,n)
+			{
+				
+				if(html)
+				{
+					if(n)
+					{	
+						$('#res_up').css('display','block');
+						$("#upperText").html('<img src="/admin_tpl/images/warning.png" align="middle" style="margin-right:20px;"/>'+html);
+						$('#markhron').css('display','none');
+						
+					}
+				}
+				
+			}
+			
+			function calcTimeUpdate(next,timeAll)
+			{
+				var curTime=countOffers-next;
+				var st=0;
+				var timers=0;								
+				timers=Math.ceil(timeAll/(next-1));	
+				var koM=0.1;
+				return ShowTime(timers*curTime*koM);
+			}
+			function ShowTime(times)
+			{
+				
+				if(times<60)
+				{
+					var sd=0;
+					var sec=Math.ceil(times);
+				}
+				else
+				{
+					var sd=Math.ceil(times/60);					
+					var sec=0;
+					sec=times%60;
+				}
+				if(sd>0)				
+					return sd+' мин. '+Math.ceil(sec)+' сек.';
+				else
+					return sec+' сек.';
+				
+				
+			}
+			function infoUpdatePage(counts,page)
+			{
+				$.post('/cron/endupdate',{started:page,allcount:counts},function(json){
+					if(json.act==1)
+						infoUpdateDel();
+					if(json.act==12)					
+						infoUpdatePage(json.allcount,json.next);
+					else{						
+						$('#up_progress12').hide();
+						NoLoadings(json.error,1);
+					}
+				},"json");
+			}
+			function infoDelPage(counts,page)
+			{
+				$.post('/cron/enddel',{started:page,allcount:counts},function(json){
+					if(json.act==1)
+					{	
+						updateEnd();
+					}
+					if(json.act==12)					
+						infoDelPage(json.allcount,json.next);
+					else{						
+						$('#up_progress12').hide();
+						NoLoadings(json.error,1);
+					}
+				},"json");
+			}
+
+        </script>
+    </li>
+<ul>

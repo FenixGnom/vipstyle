@@ -1,0 +1,6 @@
+<table>
+   <tr class="h"><td>id</td><td>Название</td></tr>
+   <?for($i=0;$i<count($this->vars[of]);$i++):?>
+		 <tr class="t"><td><?=$this->vars[of][$i]['oldid']?></td><td><?=$this->vars[of][$i]['name']?></td></tr>
+   <?endfor;?>   
+</table>

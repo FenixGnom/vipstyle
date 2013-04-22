@@ -1,0 +1,70 @@
+<div id="ffform">
+    <?echo $this->vars['form']?>
+</div>
+
+
+<div style="margin-top:20px;">
+   <table cellpadding="1"  cellspacing="1" width=100%   class="showTables">
+			<tr class="heades">
+				<td  width="200px"  >Файл</td>
+				<td  width="100px" >Статус</td>
+                                <td  width="150px" >Ссылка</td>
+                                <td  width="150px" >&nbsp;</td>
+                                <td  width="150px" >&nbsp;</td>
+
+			</tr>
+                        
+                        <?$count=count($this->vars['data']);?>
+			<?if($count!=0):?>
+			<?$i=0;while($i<$count):?>
+				<tr class="params">
+                                    <td ><img src="<? echo "/banners/".$this->vars['data'][$i]['path'] ?>" width="100"></td>
+					<td ><?if($this->vars['data'][$i]['status']==0):?>Неактивна<?else :?>Активна<?endif;?></td>
+                                        <td ><?echo $this->vars['data'][$i]['link']?></td>
+                                         <td ><a href="javascript:updateNewBanners(<?echo $this->vars['data'][$i]['id']?>);">Изменить</a></td>
+                                         <td><a href="javascript:deleteBanners(<?echo $this->vars['data'][$i]['id']?>);">Удалить</a></td>
+
+				</tr>
+			<?$i++;?>
+			<?endwhile?>
+			<?else :?>
+				<tr class="params">
+					<td  colspan=3>Баннеров нет</td>
+				</tr>
+			<?endif;?>
+	</table>
+
+</div>
+
+<script>
+    function addNewBanners()
+    {
+        var ll=jQuery('#link').val();
+        var ld=jQuery('#id').val();
+        var stl=jQuery('#st').val();
+      
+        jQuery.post('/admin/banners',{link:ll,id:ld,status:stl},function(html)
+        {
+            jQuery('#contents').html(html);
+        });
+    }
+
+    function updateNewBanners(id)
+    {
+        
+        jQuery.get('/admin/bannersupd/id/'+id,function(html)
+        {
+            jQuery('#ffform').html(html);
+        });
+
+    }
+    function deleteBanners(id)
+    {
+    jQuery.get('/admin/banners/id/'+id,function(html)
+        {
+            jQuery('#contents').html(html);
+        });
+    }
+</script>
+
+

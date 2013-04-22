@@ -1,0 +1,30 @@
+<script>
+function showInToday()
+	{
+		jQuery.post('/admin/stadvert',{},function(html)
+		{
+			jQuery('#contents').html(html);
+		});
+	}
+</script>
+<div  class="forms" style="float:left;width:600px;">
+
+<div style="float:left;padding:5px;">
+	<?if($this->vars['today']==0):?>
+		<a class="add" href="javascript:showInToday();">За сегодня</a>
+	<?else :?>
+		<u>За сегодня</u>
+	<?endif;?>
+</div>
+<div style="float:left;margin-left:10px;">
+По дате: 
+с <input type="text"  id="sta"  value="<?=$this->vars['start']?>"> по <input id="fin" value="<?=$this->vars['finish']?>" type="text"> <input type="button" value="показать" onclick="shoDateStA()">
+</div>
+<div style="clear:both;"></div>	
+</div>
+<div style="float:left;margin-left:20px;font-size:12px;">
+	<div><b>Всего переходов:</b> <?=$this->vars['allN'][0]['ccCount']?> </div>
+	<div><b>Всего заказов:</b> <?=$this->vars['allN'][0]['ccZak']?> </div>
+	<div><b>Общая конверсия:</b> <?=round($this->vars['allN'][0]['conv'],2);?></div>
+</div>
+<div style="clear:both;"></div>	

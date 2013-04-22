@@ -1,0 +1,133 @@
+<div class="page-header">
+    <h2>Отображение контента</h2>
+    <small>Управление отображением</small>
+</div>
+
+<div class="tabbable tabs-left" id="myTab">
+    <ul class="nav nav-tabs">
+		<?for($i=0;$i<count($this->vars['links']);$i++):?>			
+			<li <?if($i==0):?>class="active"<?endif;?>><a href="#<?=$this->vars['links'][$i]['id']?>" data-toggle="tab"><?=$this->vars['links'][$i]['text']?></a></li>
+		<?endfor;?>        
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="categories">
+            
+        </div>
+		<div class="tab-pane" id="subcategories">
+            
+        </div>
+		<div class="tab-pane" id="offers">
+            
+        </div>       
+    </div>
+</div>
+<script>
+var activesType='';
+function tabsShow(types,showN,page){
+	var f=0;
+	if(showN)
+	f=1;
+	if(!page)
+		var pp='/page/1';
+	else
+		var pp='/page/'+page;
+	$.post('/admin/catalogview'+pp,{type:types,p:f},function(html){
+		if(!showN)
+			$('#'+types).html(html);
+		else
+			$('#'+types+'-view-table').html(html);
+			
+	})
+ }
+function showCat()
+{
+	activesType='categories';
+	var name=$('input[name="categories_name"]').val();
+	var type=$('select[name="categories_type"]').val();
+	$.post('/admin/catalogSrch/object/categories',{categories_name:name,type:type},function(html){
+		$('#foundElems_categories').html(html);
+		$('#foundElems_categories').css('display','block');
+		$('#foundElems_subcategories').css('display','none');
+		$('#foundElems_offers').css('display','none');
+	})
+} 
+function showCatSub()
+{
+	activesType='subcategories';
+	var name=$('input[name="subcategories_name"]').val();
+	$.post('/admin/catalogSrch/object/subcategories',{subcategories_name:name},function(html){
+		$('#foundElems_subcategories').html(html);
+		$('#foundElems_subcategories').css('display','block');
+		$('#foundElems_categories').css('display','none');
+		$('#foundElems_offers').css('display','none');
+	})
+}
+function showOffers()
+{
+	activesType='offers';
+	var name=$('input[name="offers_name"]').val();
+	var type=$('select[name="offers_type"]').val();
+	$.post('/admin/catalogSrch/object/offers',{offers_name:name,type:type},function(html){
+		$('#foundElems_subcategories').css('display','none');
+		$('#foundElems_categories').css('display','none');
+		$('#foundElems_offers').html(html);
+		$('#foundElems_offers').css('display','block');
+		
+	})
+}
+function addAlowed(link,idForm,t)
+{
+	
+	if(t)
+		var data=$('#formf-'+idForm).serialize();
+	else
+	{	
+		
+		var data=new Object();
+		data={
+			show:$('select[name="show_'+idForm+'"]').val()
+		}
+	}
+		
+	$.post(link,data,function(json){
+		if(json.a==1)
+		{
+			/*$('#obj-'+idForm).remove();
+			$('#formsin_'+idForm).remove();
+			$('#found-'+idForm).remove();	*/
+			var f=idForm.split('-');
+			if(f[0]=="categories") 
+			{
+			tabsShow('categories',1);
+			showCat();
+			}
+			if(f[0]=="subcategories") 
+			{
+			tabsShow('subcategories',1);
+			showCatSub();
+			}
+			if(f[0]=="offers") 
+			{
+			tabsShow('offers',1);
+			showOffers();
+			}
+			//var utt="/admin/catalogreload/obj/"+f[0];
+			//window.location.href=utt;
+			
+		}
+	},"json")
+}
+tabsShow('categories');
+tabsShow('subcategories');
+tabsShow('offers');
+
+function ResetS(type){
+$('#foundElems_'+type).html('');
+$('input[name="'+type+'_name"]').val('');
+}
+
+function showFormInAllowd(id)
+{
+	$('#formsin_'+id).show();
+}
+</script>

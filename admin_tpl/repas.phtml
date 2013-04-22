@@ -1,0 +1,93 @@
+<?if(isset($_SESSION['is_admin'])):?>
+	<script src="/admin_tpl/scripts/jquery.js"></script>
+	<style>
+		table{width:100%;border: 1px solid #BDC6E0;}
+		table td {
+		font-size:12px;
+		padding:2px;
+		}
+		table tr.h td{
+		background: none repeat scroll 0 0 #F1F3FA;
+		border-bottom: 1px solid #BDC6E0;
+		border-right: 1px solid #BDC6E0;   
+		text-align: center;
+		}
+		table tr.t td{
+			border-right: 1px solid #BDC6E0;
+			border-top: 1px solid #BDC6E0;    
+			text-align: center;
+		}
+		table tr.t td.error{color:red;font-size:12px; width:25%;border:0px;}
+	</style>
+	<div id="ins">
+		<form id="formPas" method="post">
+			<table cellpadding=0 cellspacing=0>
+				<tr class="t">
+					<td>Ваш текущий пароль:</td><td><input type="password" name="oldPassword"></td><td id="oldPassword" class="error"></td>
+				</tr>
+				<tr class="t">	
+					<td>Ваш новый пароль:</td><td><input type="password" name="Password"></td><td class="error" id="Password"></td>
+				</tr>
+				<tr class="t">	
+					<td>Повторите пароль:</td><td><input type="password" name="PasswordRe"></td><td id="PasswordRe" class="error"></td>
+				</tr>	
+				
+				<tr class="t" >
+					<td colspan="3" style="border-right:0px;"><input type="button" onclick="repass();"  value="Сохранить"/></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<div id="Load" style="width:100%;height:100px;background: url('/admin_tpl/images/loadinfo.net.gif') center no-repeat;">
+		
+	</div>
+	<script>
+	$('#Load').css('display','none');
+		function repass()
+		{
+			$('#Load').css('display','block');
+			$('#ins').css('display','none');
+			$.post('/admin/repasswordmain',$('#formPas').serialize(),function(json){
+				$('#Load').css('display','none');
+				$('#ins').css('display','block');
+				if(json.act==0)
+				{
+					if(json.error.oldPassword)
+					{
+						$('input[name="oldPassword"]').css('background','#FF8282');
+						$('#oldPassword').html(json.error.oldPassword);
+					}
+					if(json.error.Password)
+					{
+						$('input[name="Password"]').css('background','#FF8282');
+						$('#Password').html(json.error.Password);
+					}
+					if(json.error.PasswordRe)
+					{
+						$('input[name="Password"]').css('background','#FF8282');
+						$('#PasswordRe').html(json.error.PasswordRe);
+					}
+					
+				}
+				if(json.act==1)
+				{
+					
+					
+					window.opener.document.getElementById('passwordInMessages').innerHTML='';
+					self.close();
+					
+				}
+			},"json");
+		}
+	$(function(){
+
+            jQuery('form#formPas input[type="password"]').each(function(){                
+                $(this).click(function(){
+                    jQuery(this).css('background','#fff');
+                });
+            });			
+    });
+	</script>
+<?else:?>
+	<h1>Доступ запрещен</h1>
+<?endif;?>	

@@ -1,0 +1,45 @@
+.menuBlock
+{
+	width:100%;
+	height:61px;
+}
+.menuButtonsLR
+{
+	height:61px;
+	width:124px;
+}
+.menuButtonsLR a
+{
+	border:0px;
+	cursor:pointer;
+	color:#ffffff;
+	font-weight:bold;
+	font-size:12px;
+	font-family:tahoma;
+	text-decoration:none;
+
+
+}
+
+.menuButtons
+{
+	height:41px;
+ 	width:124px;
+	background: url('/themes/partner2/images/menu-top.jpg') top center no-repeat;
+ 	text-align:center;
+    padding-top:20px !important;
+}
+.window_screen
+{
+	position:absolute;
+	top: -200px;
+	left: 55px;
+	z-index:22;
+	width:320px;
+	border:2px solid #3E3E3E;
+	background:#ffffff;
+	font-size:12px;
+	color:#5B5B5B;
+
+}
+

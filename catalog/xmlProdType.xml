@@ -1,0 +1,1129 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<producttypes>
+  <producttype id="manshort" productview="Одежда" productgroup="Мужская" producttype="Короткий рукав" double="Y">
+    <name>Мужская футболка</name>
+    <colors>
+      <color id="asphalt">
+        <name>Асфальт</name>
+        <sizes>
+          <size id="xs" price_add="0">XS (42-44)</size>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+      <color id="black">
+        <name>Черный</name>
+        <sizes>
+          <size id="xs" price_add="0">XS (42-44)</size>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+      <color id="blue">
+        <name>Синий</name>
+        <sizes>
+          <size id="xs" price_add="0">XS (42-44)</size>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+      <color id="green">
+        <name>Зеленый</name>
+        <sizes>
+          <size id="xs" price_add="0">XS (42-44)</size>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+      <color id="lightviolet">
+        <name>Светлофиолетовый</name>
+        <sizes>
+          <size id="xs" price_add="0">XS (42-44)</size>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+      <color id="olive">
+        <name>Оливковый</name>
+        <sizes>
+          <size id="xs" price_add="0">XS (42-44)</size>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+      <color id="orange">
+        <name>Оранжевый</name>
+        <sizes>
+          <size id="xs" price_add="0">XS (42-44)</size>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+      <color id="pink">
+        <name>Розовый</name>
+        <sizes>
+          <size id="xs" price_add="0">XS (42-44)</size>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+      <color id="red">
+        <name>Красный</name>
+        <sizes>
+          <size id="xs" price_add="0">XS (42-44)</size>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+      <color id="skyblue">
+        <name>Бирюзовый</name>
+        <sizes>
+          <size id="xs" price_add="0">XS (42-44)</size>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+      <color id="violet">
+        <name>Фиолетовый</name>
+        <sizes>
+          <size id="xs" price_add="0">XS (42-44)</size>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+      <color id="white">
+        <name>Белый</name>
+        <sizes>
+          <size id="xs" price_add="0">XS (42-44)</size>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+      <color id="yellow">
+        <name>Желтый</name>
+        <sizes>
+          <size id="xs" price_add="0">XS (42-44)</size>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+        </sizes>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="hoodie" productview="Одежда" productgroup="Мужская,Женская" producttype="Толстовка" double="Y">
+    <name>Толстовка</name>
+    <colors>
+      <color id="black">
+        <name>Черный</name>
+        <sizes>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+      <color id="blue">
+        <name>Синий</name>
+        <sizes>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+      <color id="red">
+        <name>Красный</name>
+        <sizes>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+      <color id="white">
+        <name>Белый</name>
+        <sizes>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="manlong" productview="Одежда" productgroup="Мужская" producttype="Длинный рукав" double="Y">
+    <name>Мужская футболка с длинным рукавом</name>
+    <colors>
+      <color id="black">
+        <name>Черный</name>
+        <sizes>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+      <color id="blue">
+        <name>Синий</name>
+        <sizes>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+      <color id="red">
+        <name>Красный</name>
+        <sizes>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+      <color id="white">
+        <name>Белый</name>
+        <sizes>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="man_polo" productview="Одежда" productgroup="Мужская" producttype="Поло" double="Y">
+    <name>Мужская футболка поло</name>
+    <colors>
+      <color id="black">
+        <name>Черный</name>
+        <sizes>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+      <color id="blue">
+        <name>Синий</name>
+        <sizes>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+      <color id="green">
+        <name>Зеленый</name>
+        <sizes>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+      <color id="red">
+        <name>Красный</name>
+        <sizes>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+      <color id="white">
+        <name>Белый</name>
+        <sizes>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+      <color id="yellow">
+        <name>Желтый</name>
+        <sizes>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="man_tshirt" productview="Одежда" productgroup="Мужская" producttype="Майка" double="Y">
+    <name>Мужская майка</name>
+    <colors>
+      <color id="black">
+        <name>Черный</name>
+        <sizes>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+      <color id="white">
+        <name>Белый</name>
+        <sizes>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="man_borcovka" productview="Одежда" productgroup="Мужская" producttype="Борцовка" double="Y">
+    <name>Мужская майка борцовка</name>
+    <colors>
+      <color id="black">
+        <name>Черный</name>
+        <sizes>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+      <color id="white">
+        <name>Белый</name>
+        <sizes>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="manreglan" productview="Одежда" productgroup="Мужская" producttype="Реглан" double="Y">
+    <name>Мужская футболка реглан</name>
+    <colors>
+      <color id="whiteblack">
+        <name>Белый + черный</name>
+        <sizes>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+      <color id="whiteblue">
+        <name>Белый + синий</name>
+        <sizes>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+      <color id="whiteorange">
+        <name>Белый + оранжевый</name>
+        <sizes>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+      <color id="whitered">
+        <name>Белый + красный</name>
+        <sizes>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="manreglanlong" productview="Одежда" productgroup="Мужская" producttype="Реглан с рукавом" double="Y">
+    <name>Мужская футболка реглан с длинным рукавом</name>
+    <colors>
+      <color id="whiteblue">
+        <name>Белый + синий</name>
+        <sizes>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="warm_hoodie" productview="Одежда" productgroup="Мужская,Женская" producttype="Толстовка утепленная" double="Y">
+    <name>Толстовка утепленная</name>
+    <colors>
+      <color id="black">
+        <name>Черный</name>
+        <sizes>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+      <color id="blue">
+        <name>Синий</name>
+        <sizes>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+      <color id="grey">
+        <name>Серый</name>
+        <sizes>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+      <color id="red">
+        <name>Красный</name>
+        <sizes>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+      <color id="white">
+        <name>Белый</name>
+        <sizes>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+          <size id="xxxl" price_add="0">XXXL (54)</size>
+        </sizes>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="womanshort" productview="Одежда" productgroup="Женская" producttype="Короткий рукав" double="Y">
+    <name>Женская футболка</name>
+    <colors>
+      <color id="black">
+        <name>Черный</name>
+        <sizes>
+          <size id="xs" price_add="0">XS (42-44)</size>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+        </sizes>
+      </color>
+      <color id="blue">
+        <name>Синий</name>
+        <sizes>
+          <size id="xs" price_add="0">XS (42-44)</size>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+        </sizes>
+      </color>
+      <color id="lightblue">
+        <name>Светло-Голубой</name>
+        <sizes>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+        </sizes>
+      </color>
+      <color id="orange">
+        <name>Оранжевый</name>
+        <sizes>
+          <size id="xs" price_add="0">XS (42-44)</size>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+        </sizes>
+      </color>
+      <color id="pink">
+        <name>Розовый</name>
+        <sizes>
+          <size id="xs" price_add="0">XS (42-44)</size>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+        </sizes>
+      </color>
+      <color id="red">
+        <name>Красный</name>
+        <sizes>
+          <size id="xs" price_add="0">XS (42-44)</size>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+        </sizes>
+      </color>
+      <color id="white">
+        <name>Белый</name>
+        <sizes>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+        </sizes>
+      </color>
+      <color id="yellow">
+        <name>Желтый</name>
+        <sizes>
+          <size id="xs" price_add="0">XS (42-44)</size>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+        </sizes>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="mama" productview="Одежда" productgroup="Женская" producttype="Для беремен ных" double="Y">
+    <name>Футболка для беременных</name>
+    <colors>
+      <color id="pink">
+        <name>Розовый</name>
+        <sizes>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+        </sizes>
+      </color>
+      <color id="sky">
+        <name>Небесно-Голубой</name>
+        <sizes>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+        </sizes>
+      </color>
+      <color id="white">
+        <name>Белый</name>
+        <sizes>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+        </sizes>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="womanlong" productview="Одежда" productgroup="Женская" producttype="Длинный рукав" double="Y">
+    <name>Женская футболка с длинным рукавом</name>
+    <colors>
+      <color id="black">
+        <name>Черный</name>
+        <sizes>
+          <size id="xs" price_add="0">XS (42-44)</size>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+        </sizes>
+      </color>
+      <color id="white">
+        <name>Белый</name>
+        <sizes>
+          <size id="xs" price_add="0">XS (42-44)</size>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+        </sizes>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="woman_borcovka" productview="Одежда" productgroup="Женская" producttype="Борцовка" double="Y">
+    <name>Женская майка борцовка</name>
+    <colors>
+      <color id="black">
+        <name>Черный</name>
+        <sizes>
+          <size id="xs" price_add="0">XS (42-44)</size>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+        </sizes>
+      </color>
+      <color id="white">
+        <name>Белый</name>
+        <sizes>
+          <size id="xs" price_add="0">XS (42-44)</size>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+        </sizes>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="woman_tshirt" productview="Одежда" productgroup="Женская" producttype="Майка" double="Y">
+    <name>Женская майка</name>
+    <colors>
+      <color id="black">
+        <name>Черный</name>
+        <sizes>
+          <size id="xs" price_add="0">XS (42-44)</size>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+        </sizes>
+      </color>
+      <color id="white">
+        <name>Белый</name>
+        <sizes>
+          <size id="xs" price_add="0">XS (42-44)</size>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+        </sizes>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="mamalong" productview="Одежда" productgroup="Женская" producttype="Для беременных с рукавом" double="Y">
+    <name>Футболка для беременных с длинным рукавом</name>
+    <colors>
+      <color id="pink">
+        <name>Розовый</name>
+        <sizes>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+        </sizes>
+      </color>
+      <color id="sky">
+        <name>Небесно-Голубой</name>
+        <sizes>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+          <size id="xxl" price_add="0">XXL (52-54)</size>
+        </sizes>
+      </color>
+      <color id="white">
+        <name>Белый</name>
+        <sizes>
+          <size id="s" price_add="0">S (44-46)</size>
+          <size id="m" price_add="0">M (46-48)</size>
+          <size id="l" price_add="0">L (48-50)</size>
+          <size id="xl" price_add="0">XL (50-52)</size>
+        </sizes>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="child" productview="Одежда" productgroup="Детская" producttype="Детская футболка" double="Y">
+    <name>Детская футболка</name>
+    <colors>
+      <color id="blue">
+        <name>Синий</name>
+        <sizes>
+          <size id="2" price_add="0">5XS (3-4 года)</size>
+          <size id="3" price_add="0">4XS (5-6 лет)</size>
+          <size id="4" price_add="0">3XS (7-8 лет)</size>
+          <size id="6" price_add="0">2XS (9-10 лет)</size>
+          <size id="8" price_add="0">XS (11-12 лет)</size>
+        </sizes>
+      </color>
+      <color id="orange">
+        <name>Оранжевый</name>
+        <sizes>
+          <size id="2" price_add="0">5XS (3-4 года)</size>
+          <size id="3" price_add="0">4XS (5-6 лет)</size>
+          <size id="4" price_add="0">3XS (7-8 лет)</size>
+          <size id="6" price_add="0">2XS (9-10 лет)</size>
+          <size id="8" price_add="0">XS (11-12 лет)</size>
+        </sizes>
+      </color>
+      <color id="red">
+        <name>Красный</name>
+        <sizes>
+          <size id="2" price_add="0">5XS (3-4 года)</size>
+          <size id="3" price_add="0">4XS (5-6 лет)</size>
+          <size id="4" price_add="0">3XS (7-8 лет)</size>
+          <size id="6" price_add="0">2XS (9-10 лет)</size>
+          <size id="8" price_add="0">XS (11-12 лет)</size>
+        </sizes>
+      </color>
+      <color id="white">
+        <name>Белый</name>
+        <sizes>
+          <size id="2" price_add="0">5XS (3-4 года)</size>
+          <size id="3" price_add="0">4XS (5-6 лет)</size>
+          <size id="4" price_add="0">3XS (7-8 лет)</size>
+          <size id="8" price_add="0">XS (11-12 лет)</size>
+        </sizes>
+      </color>
+      <color id="yellow">
+        <name>Желтый</name>
+        <sizes>
+          <size id="2" price_add="0">5XS (3-4 года)</size>
+          <size id="3" price_add="0">4XS (5-6 лет)</size>
+          <size id="4" price_add="0">3XS (7-8 лет)</size>
+          <size id="6" price_add="0">2XS (9-10 лет)</size>
+          <size id="8" price_add="0">XS (11-12 лет)</size>
+        </sizes>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="krujka" productview="Посуда" productgroup="Кружки" producttype="Классика" double="Y">
+    <name>Кружка</name>
+    <colors>
+      <color id="gold">
+        <name>Золотой</name>
+      </color>
+      <color id="silver">
+        <name>Серебро</name>
+      </color>
+      <color id="white">
+        <name>Белый</name>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="mug_kant" productview="Посуда" productgroup="Кружки" producttype="С кантом" double="Y">
+    <name>Кружка с кантом</name>
+    <colors>
+      <color id="whiteblack">
+        <name>Белый + черный</name>
+      </color>
+      <color id="whiteblue">
+        <name>Белый + синий</name>
+      </color>
+      <color id="whitegreen">
+        <name>Белый + зеленый</name>
+      </color>
+      <color id="whitelightgreen">
+        <name>Белый + светло-зеленый</name>
+      </color>
+      <color id="whiteorange">
+        <name>Белый + оранжевый</name>
+      </color>
+      <color id="whitepink">
+        <name>Белый + розовый</name>
+      </color>
+      <color id="whitered">
+        <name>Белый + красный</name>
+      </color>
+      <color id="whitesky">
+        <name>Белый + небесно-голубой</name>
+      </color>
+      <color id="whiteyellow">
+        <name>Белый + желтый</name>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="mug_twotone" productview="Посуда" productgroup="Кружки" producttype="Двух цветная" double="Y">
+    <name>Кружка двухцветная</name>
+    <colors>
+      <color id="whiteblack">
+        <name>Белый + черный</name>
+      </color>
+      <color id="whiteblue">
+        <name>Белый + синий</name>
+      </color>
+      <color id="whitegreen">
+        <name>Белый + зеленый</name>
+      </color>
+      <color id="whitelightgreen">
+        <name>Белый + светло-зеленый</name>
+      </color>
+      <color id="whiteorange">
+        <name>Белый + оранжевый</name>
+      </color>
+      <color id="whitepink">
+        <name>Белый + розовый</name>
+      </color>
+      <color id="whitered">
+        <name>Белый + красный</name>
+      </color>
+      <color id="whitesky">
+        <name>Белый + небесно-голубой</name>
+      </color>
+      <color id="whiteyellow">
+        <name>Белый + желтый</name>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="mug_chameleon" productview="Посуда" productgroup="Кружки" producttype="Хамелеон" double="Y">
+    <name>Кружка хамелеон</name>
+    <colors>
+      <color id="whiteblack">
+        <name>Белый + черный</name>
+      </color>
+      <color id="whiteblue">
+        <name>Белый + синий</name>
+      </color>
+      <color id="whitegreen">
+        <name>Белый + зеленый</name>
+      </color>
+      <color id="whiteorange">
+        <name>Белый + оранжевый</name>
+      </color>
+      <color id="whitered">
+        <name>Белый + красный</name>
+      </color>
+      <color id="whiteviolet">
+        <name>Белый + фиолетовый</name>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="mug_mat" productview="Посуда" productgroup="Кружки" producttype="Матовая" double="Y">
+    <name>Кружка матовая</name>
+    <colors>
+      <color id="white">
+        <name>Белый</name>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="mug_twin" productview="Посуда" productgroup="Кружки" producttype="Парные">
+    <name>Кружки парные</name>
+    <colors>
+      <color id="white">
+        <name>Белый</name>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="mug_thermos" productview="Посуда" productgroup="Кружки" producttype="Термос" double="Y">
+    <name>Кружка термос</name>
+    <colors>
+      <color id="metal">
+        <name>Металл</name>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="caps" productview="Головные уборы" productgroup="Бейсболки" producttype="Бейсболка">
+    <name>Бейсболка</name>
+    <colors>
+      <color id="blue">
+        <name>Синий</name>
+      </color>
+      <color id="red">
+        <name>Красный</name>
+      </color>
+      <color id="white">
+        <name>Белый</name>
+      </color>
+      <color id="yellow">
+        <name>Желтый</name>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="snapback" productview="Головные уборы" productgroup="Бейсболки" producttype="Рэперская кепка">
+    <name>Рэперская кепка</name>
+    <colors>
+      <color id="black">
+        <name>Черный</name>
+      </color>
+      <color id="darkblue">
+        <name>Темносиний</name>
+      </color>
+      <color id="white">
+        <name>Белый</name>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="pantsman" productview="Нижнее белье" productgroup="Мужские трусы" producttype="Мужские трусы">
+    <name>Мужские трусы</name>
+    <colors>
+      <color id="black">
+        <name>Черный</name>
+        <sizes>
+          <size id="s" price_add="0">S</size>
+          <size id="m" price_add="0">M</size>
+          <size id="l" price_add="0">L</size>
+        </sizes>
+      </color>
+      <color id="white">
+        <name>Белый</name>
+        <sizes>
+          <size id="s" price_add="0">S</size>
+          <size id="m" price_add="0">M</size>
+          <size id="l" price_add="0">L</size>
+        </sizes>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="pantswoman" productview="Нижнее белье" productgroup="Женские трусы" producttype="Женские трусы">
+    <name>Женские трусы</name>
+    <colors>
+      <color id="black">
+        <name>Черный</name>
+        <sizes>
+          <size id="s" price_add="0">S</size>
+          <size id="m" price_add="0">M</size>
+          <size id="l" price_add="0">L</size>
+        </sizes>
+      </color>
+      <color id="white">
+        <name>Белый</name>
+        <sizes>
+          <size id="s" price_add="0">S</size>
+          <size id="m" price_add="0">M</size>
+          <size id="l" price_add="0">L</size>
+        </sizes>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="pad" productview="Аксессуары" productgroup="Коврики" producttype="Коврик круглый">
+    <name>Коврик круглый</name>
+    <colors>
+      <color id="white">
+        <name>Белый</name>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="pad2" productview="Аксессуары" productgroup="Коврики" producttype="Коврик прямоугольный">
+    <name>Коврик прямоугольный</name>
+    <colors>
+      <color id="white">
+        <name>Белый</name>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="sign" productview="Аксессуары" productgroup="Значки" producttype="Значок">
+    <name>Значок</name>
+    <colors>
+      <color id="white">
+        <name>Белый</name>
+        <sizes>
+          <size id="25mm" price_add="0">25mm</size>
+          <size id="37mm" price_add="2">37mm</size>
+          <size id="56mm" price_add="6">56mm</size>
+        </sizes>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="bag" productview="Аксессуары" productgroup="Сумки" producttype="Сумка">
+    <name>Сумка</name>
+    <colors>
+      <color id="white">
+        <name>Белый</name>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="hat" productview="Головные уборы" productgroup="Шапки" producttype="Шапка">
+    <name>Шапка</name>
+    <colors>
+      <color id="black">
+        <name>Черный</name>
+      </color>
+      <color id="blue">
+        <name>Синий</name>
+      </color>
+      <color id="grey">
+        <name>Серый</name>
+      </color>
+      <color id="red">
+        <name>Красный</name>
+      </color>
+      <color id="white">
+        <name>Белый</name>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="keychain_round" productview="Аксессуары" productgroup="Брелоки" producttype="Брелок круглый">
+    <name>Брелок круглый</name>
+    <colors>
+      <color id="white">
+        <name>Белый</name>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="keychain_opener" productview="Аксессуары" productgroup="Брелоки" producttype="Брелок-открывашка">
+    <name>Брелок-Открывашка</name>
+    <colors>
+      <color id="white">
+        <name>Белый</name>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="magnet_55_55" productview="Аксессуары" productgroup="Магниты" producttype="Магнит 55*55">
+    <name>Магнит 55*55</name>
+    <colors>
+      <color id="white">
+        <name>Белый</name>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="magnet_45_70" productview="Аксессуары" productgroup="Магниты" producttype="Магнит 45*70">
+    <name>Магнит 45*70</name>
+    <colors>
+      <color id="blue">
+        <name>Синий</name>
+      </color>
+      <color id="gold">
+        <name>Золотой</name>
+      </color>
+      <color id="green">
+        <name>Зеленый</name>
+      </color>
+      <color id="red">
+        <name>Красный</name>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="thermos" productview="Посуда" productgroup="Термосы" producttype="Термос">
+    <name>Термос</name>
+    <colors>
+      <color id="metal">
+        <name>Металл</name>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="thermosblack" productview="Посуда" productgroup="Термосы" producttype="Термос с черной крышкой">
+    <name>Термос с черной крышкой</name>
+    <colors>
+      <color id="metal">
+        <name>Металл</name>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="bib" productview="Аксессуары" productgroup="Слюнявчики" producttype="Слюнявчик">
+    <name>Слюнявчик</name>
+    <colors>
+      <color id="whiteblue">
+        <name>Белый + синий</name>
+      </color>
+      <color id="whitered">
+        <name>Белый + красный</name>
+      </color>
+      <color id="whiteyellow">
+        <name>Белый + желтый</name>
+      </color>
+    </colors>
+  </producttype>
+  <producttype id="apron" productview="Аксессуары" productgroup="Фартуки" producttype="Фартук">
+    <name>Фартук</name>
+    <colors>
+      <color id="whiteblue">
+        <name>Белый + синий</name>
+      </color>
+      <color id="whiteorange">
+        <name>Белый + оранжевый</name>
+      </color>
+      <color id="whitesky">
+        <name>Белый + небесно-голубой</name>
+      </color>
+      <color id="whiteyellow">
+        <name>Белый + желтый</name>
+      </color>
+    </colors>
+  </producttype>
+</producttypes>

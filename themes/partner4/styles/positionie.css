@@ -1,0 +1,16 @@
+
+.window_screen
+{
+	position:absolute;
+	top: -60px;
+	left: -160px;
+	z-index:22;
+	width:320px;
+	border:2px solid #3E3E3E;
+	background:#ffffff;
+	font-size:12px;
+	color:#5B5B5B;
+
+}
+.newWagesBlock
+{	margin-left:8px;}

@@ -1,0 +1,28 @@
+{literal}
+	<style>
+	.accepted{font-size:12px;}
+	h4{font-size:13px;}
+	</style>
+{/literal}
+
+	{if $template_data->ReturnIdOrder()==1}	
+		<div class="contentTitle" style="position:relative;"><span>Ваш Заказ принят!</span></div>  
+		                      
+				          
+			
+		<div class="accepted">
+			<h4>Номер Вашего заказа {$template_data->IdOrder()}</h4>
+			<p style="margin-left:0px;">Вся информация выслана на электронную почту<br> С Вами свяжется оператор для подтверждения заказа</p>
+		</div>
+		<div style="height:10px;"></div>
+		<div >		
+			<a  style="background:  #000000;border: 1px solid #000000;color: #FFFFFF;cursor: pointer;font-size: 13px;margin-top: 5px;padding: 2px 3px;" href="http://maykoplat.ru/?id={$template_data->IdOrder()}&email={$template_data->EmailUser()}" >Оплатить</a>
+		</div>
+	{else}
+	<div class="contentTitle" style="position:relative;"><span>Ваш Заказ не принят!</span></div> 
+		
+		<div class="accepted">
+			<h4>Номер Вашего заказа {$template_data->IdOrder()}</h4>	
+		</div>
+	{/if}
+	{$template_data->AnsewerServer()}

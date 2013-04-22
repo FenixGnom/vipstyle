@@ -1,0 +1,35 @@
+.searchInputHeader
+{
+ 	width:188px;
+ 	height:18px;
+ 	font-size:13px;
+ 	color:#023E9E;
+ 	margin-left:6px;
+ 	margin-top:2px;
+}
+.content
+{	width:775px;}
+.mainProductB
+{
+	width:188px;
+}
+.mainProduct
+{
+	width:190px;
+
+}
+.window_screen
+{
+
+	position:absolute;
+	top: -60px;
+	left: -160px;
+	z-index:22;
+	width:400px;
+	border:2px solid #14345A;
+	background:#ffffff;
+	font-size:12px;
+	color:#14345A;
+}
+.ProductSS
+{	margin-left:-70px;}

@@ -1,0 +1,25 @@
+AddDefaultCharset utf-8
+Options +Includes +FollowSymLinks -Indexes
+DirectoryIndex index.php
+
+RewriteEngine on
+RewriteBase /
+RewriteRule !((\.(js|ico|gif|jpg|png|css|htm|txt)$)|number.php) index.php
+RewriteRule ^css/(.*)$ html/css/$1
+RewriteRule ^images/(.*)$ html/images/$1
+RewriteRule ^files/(.*)$ html/files/$1
+RewriteRule ^thumb\.php(.*)$ library/thumb/phpThumb.php$1
+RewriteRule ^js/(.*)$ html/js/$1
+
+RedirectMatch 301 /product/(.*)/model/man$ /product/$1/model/manshort
+RedirectMatch 301 /product/(.*)/model/woman$ /product/$1/model/womanshort
+RedirectMatch 301 /product/(.*)/model/man-long$ /product/$1/model/manlong
+RedirectMatch 301 /product/(.*)/model/woman-long$ /product/$1/model/womanlong
+
+<Files ~ "\config.ini$">
+deny from all
+</Files>
+<Files "*.phtml">
+Order allow,deny
+Deny from all
+</Files>

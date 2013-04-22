@@ -1,0 +1,133 @@
+<?if(!isset($this->vars['tableViewer'])):?>
+
+<?$obj='';?>
+<?if($this->vars['object']=='categories'):?><?$obj='категорий';$funk='showCat();';?><?endif;?>
+<?if($this->vars['object']=='subcategories'):?><?$obj='подкатегорий';$funk='showCatSub();';?><?endif;?>
+<?if($this->vars['object']=='offers'):?><?$obj='товаров';$funk='showOffers();';?><?endif;?>
+<form class="form-horizontal" onsubmit="<?=$funk;?>;return false;">
+	<fieldset>
+		<legend>Управление отображением <?=$obj?>
+			
+		</legend>
+		
+				<div class="control-group">
+                        <label  class="control-label" style="padding-top:0;">Поиск <?=$obj?> по <?if($this->vars['object']!="subcategories"):?>
+						
+						<select style="width:100px;" name="<?php echo $this->vars['object'];?>_type"><option value="0" selected>названию</option><option value="1">номеру</option></select>
+						<?else :?>названию<?endif;?>:</label>
+                        <div class="controls" style="width:440px;">
+                            <input type="text" id="input01" class="input-xlarge" style="width:40%" name="<?php echo $this->vars['object'];?>_name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary" type="submit">Поиск</button>  <button class="btn btn-primary" type="button" onclick="ResetS('<?php echo $this->vars['object'];?>');">Отмена</button>                         
+                        </div>
+                </div>
+				<div class="control-group" style="margin-left:60px;width:450px;" id="foundElems_<?php echo $this->vars['object'];?>"></div>	
+				<div class="control-group" style="margin-left:60px;width:450px;" id="foundElems_<?php echo $this->vars['object'];?>"></div>	
+				<div class="control-group" style="margin-left:60px;width:450px;" id="foundElems_<?php echo $this->vars['object'];?>"></div>	
+				<div class="control-group" style="margin-left:60px;width:440px;margin-top:-30px;" id="foundEdit"></div>
+			
+			
+	</fieldset>	
+	
+	
+</form>
+
+
+<div id="<?=$this->vars['object']?>-view-table">
+	<?php echo $this->vars['paging']?>
+	<table  class="table table-striped table-bordered table-condensed" style="width:50%;margin:auto;">
+			<tr class="heades">
+				<td></td>
+				<td>Название</td>
+				<td  class="none">Отображать</td>
+			</tr>
+			<?if(count($this->vars['elems'])>0):?>
+				<?	for($i=0;$i<count($this->vars['elems']);$i++):?>
+					<tr id="row-<?php echo $this->vars['object'];?>-<?php echo $this->vars['elems'][$i]['id']; ?>" class="params">
+						<td><a href="javascript:void(0);" onclick="liEdit('<?php echo $this->vars['object'];?>','<?php echo $this->vars['elems'][$i]['id']; ?>','')"><img src="/admin_tpl/images/b_edit.png" border="0"></a></td>
+						<td><?php echo $this->vars['elems'][$i]['name'];?></td>
+						<td class="display none"><?php
+						switch($this->vars['elems'][$i]['allowed']){
+							case 'T': echo 'Да'; break;
+							case 'F': echo 'Нет'; break;
+						}
+							?></td>
+					</tr>
+					<tr id="editus-<?php echo $this->vars['object'];?>-<?php echo $this->vars['elems'][$i]['id']; ?>"></tr>
+				<?php endfor;?>
+			<?else :?>
+						<tr >
+							<td colspan="3">Нет записей</td>
+						</tr>
+			<?endif;?>
+	</table>		
+</div>
+<?else:?>
+	<?php echo $this->vars['paging']?>
+	<table  class="table table-striped table-bordered table-condensed" style="width:50%;margin:auto;">
+			<tr class="heades">
+				<td></td>
+				<td>Название</td>
+				<td  class="none">Отображать</td>
+			</tr>
+			<?if(count($this->vars['elems'])>0):?>
+				<?	for($i=0;$i<count($this->vars['elems']);$i++):?>
+					<tr id="row-<?php echo $this->vars['object'];?>-<?php echo $this->vars['elems'][$i]['id']; ?>" class="params">
+						<td><a href="javascript:void(0);" onclick="liEdit('<?php echo $this->vars['object'];?>','<?php echo $this->vars['elems'][$i]['id']; ?>','')"><img src="/admin_tpl/images/b_edit.png" border="0"></a></td>
+						<td><?php echo $this->vars['elems'][$i]['name'];?></td>
+						<td class="display none"><?php
+						switch($this->vars['elems'][$i]['allowed']){
+							case 'T': echo 'Да'; break;
+							case 'F': echo 'Нет'; break;
+						}
+							?></td>
+					</tr>
+					<tr id="editus-<?php echo $this->vars['object'];?>-<?php echo $this->vars['elems'][$i]['id']; ?>"></tr>
+				<?php endfor;?>
+			<?else :?>
+						<tr >
+							<td colspan="3">Нет записей</td>
+						</tr>
+			<?endif;?>
+	</table>
+<?endif;?>
+<?/*
+<?php if(@$vars['item']!='row'):?><h2></h2>
+	<div class="highLTalbe">
+		<fieldset class="elem_add">
+			<legend>Добавить/редактировать</legend>
+			<form id="elemsSrch" method="post" onsubmit="aj('/admin/catalogSrch/object/<?php echo $vars['object'];?>','foundElems','elemsSrch'); return false;">
+				<input name="<?php echo $vars['object'];?>_name" /><input type="submit" value="поиск"  />
+				<div id="foundElems" cellspacing="0"></div>
+			</form>
+			<div id="foundEdit"></div>
+		</fieldset>
+		
+<?php endif;
+if($vars['elems_count']>0):
+for($i=0;$i<$vars['elems_count'];$i++):
+
+?>
+			<tr id="row-<?php echo $vars['object'];?>-<?php echo $vars['elems'][$i]['id']; ?>" class="params">
+				<td><img src="<?php echo $this->LoadResource('image','b_edit.png');?>" onclick="liEdit('<?php
+				echo $vars['object'];?>','<?php echo $vars['elems'][$i]['id']; ?>','<?php echo $zebra;?>')" title="Редактировать" class="link" /></td>
+				<td><?php echo $vars['elems'][$i]['name'];?></td>
+				<td class="display none"><?php
+				switch($vars['elems'][$i]['allowed']){
+					case 'T': echo 'Да'; break;
+					case 'F': echo 'Нет'; break;
+				}
+					?></td>
+			</tr>
+<?php endfor;
+else :
+	echo $this->Render('highLTable_noElems.phtml');
+endif;
+if(@$vars['item']!='row'):?>
+			<tr id="HLTlstEnd">
+				<th></th>
+				<th></th>
+				<th></th>
+			</tr>
+		</table>
+	</div>
+<?php endif;?>
+*/?>

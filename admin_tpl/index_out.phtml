@@ -1,0 +1,71 @@
+      <script type="text/javascript">
+                                   $(document).ready(function(){
+
+                                   get_ord('/admin/showorders','contents');
+
+								  $("#button_up").click(
+								    function () {
+								      $.ajax({
+								        type: "GET",
+
+								        url: "/admin/update",
+								        success: function(html){
+                                                  $("#contents").html(html);
+
+					                            }
+
+								      });
+								    });
+
+                                    $("#button_zak").click(
+                                  function () {
+								      $.ajax({
+								        type: "GET",
+
+								        url: "/admin/showorders",
+								        success: function(html){
+                                                  $("#contents").html(html);
+
+					                            }
+
+								      });
+								    });
+
+                                      $("#up").click(
+                                  function () {
+								      $.ajax({
+								        type: "GET",
+
+								        url: "/admin/update/update_orders",
+								        success: function(html){
+                                                  $("#contents").html(html);
+
+					                            }
+
+								      });
+								    });
+
+
+
+
+
+
+								   $("#loading").ajaxStart(function(){
+								   $(this).show();
+								   $("#contents").hide();
+
+								   $("#up").css('visibility','hidden');
+								  });
+								  $("#loading").ajaxStop(function(){
+								   $(this).hide();
+								  });
+								  $("#contents").ajaxComplete(function(){
+								   $(this).show();
+
+								   $("#up").css('visibility','visible');
+								 });
+
+
+
+								});
+</script>

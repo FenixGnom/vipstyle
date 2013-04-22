@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="/admin_tpl/styles/bootstrap.css"  rel="stylesheet">
+        <script src="/admin_tpl/scripts/jquery-1.3.2.min.js" ></script>
+        <script src="/admin_tpl/scripts/bootstrap/dropdown.js" ></script>
+        <script src="/admin_tpl/scripts/bootstrap/tab.js" ></script>
+
+        <style>
+            .form-horizontal legend {text-align: center; }
+        </style>
+
+    </head>
+    <body>
+        <!-- Основное меню -->
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="brand" >Shop 3.3</a>
+                </div>
+            </div>
+        </div>
+        <!-- /Основное меню -->
+
+        <!-- Контент страницы -->
+        <form class="form-horizontal" action="/admin/authstep2" method="post">
+            <div class="modal">
+                <div class="modal-header">
+                    <h3>Авторизация</h3>
+                </div>
+                <div class="modal-body">
+					<?if(isset($this->vars['error'])):?><div style="color:red;margin-bottom:10px;text-align:center;">Неверный логин или пароль</div><?endif;?>
+                    <fieldset>
+                        <div class="control-group">
+                            <label class="control-label" for="input01">Имя пользователя:</label>
+                            <div class="controls">
+                                <input type="text" name="loginusername">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="input02">Пароль:</label>
+                            <div class="controls">
+                                <input type="password" name="loginpassword">
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Войти</button>
+                </div>
+            </div>
+        </form>
+    </body>
+	
+</html>

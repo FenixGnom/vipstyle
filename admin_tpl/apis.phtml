@@ -1,0 +1,195 @@
+<script>
+var catalogpageupdate = '<?=$this->vars['cut_of_upd']?>';
+var updateType = '<?=$this->vars['cut_of_updT']?>';
+var updateDelivery = '<?=$this->vars['cut_of_updD']?>';
+var urltoXml = '<?=$this->vars['urlPartnersShluse']?>';
+var debug = '<?=$this->vars['ansverServers']?>';
+</script>
+
+<div class="page-header">
+    <h2>Параметры работы с API сервера "Всемайки"</h2>
+</div>
+
+<div class="alert alert-error">
+    <strong>Внимание!</strong><br /> Не изменяйте данные параметры, если Вас на прямую не просила об этом администрация "Всемайки".
+</div>
+
+<div class="tabbable tabs-left" id="myTab">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#url" data-toggle="tab">Каталог товаров</a></li>
+        <li class=""><a href="#path" data-toggle="tab">Шлюз приема заказов</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="url">
+            <form class="form-horizontal" onsubmit="SubmittingParams('url');return false;" id="urlForm">
+                <fieldset>
+                    <div class="control-group">
+                        <label class="control-label" for="input01" style="width: 170px;">xml каталога товаров:</label>
+						
+                        <div class="controls" style="margin-left: 190px;" >
+                            <input type="text"  class="input-xlarge" id="input01" style="width: 60%;" name="catalogpageupdate" value="<?=$this->vars['cut_of_upd']?>">
+                            <p class="help-block">Url адрес для загрузки xml файла каталога товаров.</p>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="input02" style="width: 170px;">xml типов товаров:</label>
+                        <div class="controls" style="margin-left: 190px;">
+                            <input type="text" class="input-xlarge" id="input02" style="width: 60%;" name="updateType" value="<?=$this->vars['cut_of_updT']?>">
+                            <p class="help-block">Url адрес для загрузки xml файла данных о типах товаров.</p>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="input03" style="width: 170px;">xml видов доставки:</label>
+                        <div class="controls" style="margin-left: 190px;">
+                            <input type="text" class="input-xlarge" id="input03" style="width: 60%;" name="updateDelivery" value="<?=$this->vars['cut_of_updD']?>">
+                            <p class="help-block">Url адрес для загрузки xml файла данных о видах доставки.</p>
+                        </div>
+                    </div>
+                    
+                </fieldset>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+                    <button class="btn" onclick="reset();" type="button">Сбросить</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="tab-pane" id="path">
+            <form class="form-horizontal" onsubmit="SubmittingParams('path');return false;" id="pathForm">
+                <fieldset>
+                    <div class="control-group">
+                        <label class="control-label" for="input01" style="width: 170px;">Адрес шлюза:</label>
+                        <div class="controls" style="margin-left: 190px;">
+                            <input type="text" class="input-xlarge" id="input04" style="width: 40%;" name="urltoXml" value="<?=$this->vars['urlPartnersShluse']?>">
+							<span id="urltoXmlErrorText" class="alert-error" style="display: none">Введен неверный адрес шлюза</span>
+                            <p class="help-block">Url шлюза по приему заказов.</p>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="input02" style="width: 170px;">Включить режим отладки:</label>
+                        <div class="controls" style="margin-left: 190px;">
+                            <input type="checkbox" name="debug" id="input05" <?if($this->vars['ansverServers']==1):?>checked<?endif;?>>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+                    <button class="btn" onclick="reset2();" type="button">Сбросить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal hide fade" id="myModal" >
+    <div class="modal-header">
+    <button class="close" data-dismiss="modal">×</button>
+    <h3 id="link"></h3>
+    </div>
+    <div class="modal-body" id="modalTextIn" style="text-align: center;">
+	<h4 style="padding: 5px 0 5px 0;">Настройки успешно изменены</h4>
+	<input type="hidden" id="delSeoMainNah" />
+	<button type="button" class="btn btn-primary" data-dismiss="modal" onclick="reload();">ОК</button>
+    </div>
+    <div class="modal-footer">
+    </div>
+    </div>
+
+<script>
+function reload() {  
+  t=$('#delSeoMainNah').val();
+  window.location.href="/admin/apiserverreload/obj/"+t;
+}
+</script>	
+	
+<script>
+function SubmittingParams(t)
+{	
+	var f = '<?=$this->vars['cut_of_upd']?>';
+	var fnew = $('#input01').val();
+	var g = '<?=$this->vars['cut_of_updT']?>';
+	var gnew = $('#input02').val();
+	var h = '<?=$this->vars['cut_of_updD']?>';
+	var hnew = $('#input03').val();
+	
+	var j = '<?=$this->vars['urlPartnersShluse']?>';
+	var jnew = $('#input04').val();
+	var k = '<?=$this->vars['ansverServers']?>';
+	if($('#input05').prop("checked"))
+	var check =1;
+	else 
+	var check =0;
+	if(t=='url')
+		{
+			if (f == fnew && g == gnew && h == hnew )
+				{
+				
+				}
+			else
+				{
+					$.post('/admin/apiserver/t/'+t,$('#'+t+'Form').serialize(),function(json){
+						if(json.act==1)
+						{	
+							$('#delSeoMainNah').val(t);
+						
+							$('#myModal').modal('show');
+							
+						 }
+						 if(json.act==0){
+							$('input[name="'+'urltoXml'+'"]').css('background-color','#FF8282');
+							
+							$('#'+'urltoXml'+'ErrorText').css('padding','5px');
+                                                        
+							$('#'+'urltoXml'+'ErrorText').css('display','inline-table');}
+					},"json");
+				}
+		}
+	if(t=='path')
+		{ 
+				if (j == jnew && check==k )
+				{
+				}
+				else
+				{
+					$.post('/admin/apiserver/t/'+t,$('#'+t+'Form').serialize(),function(json){
+						if(json.act==1)
+						{	
+							$('#delSeoMainNah').val(t);
+						
+							$('#myModal').modal('show');
+							
+						 }
+						 if(json.act==0){
+							$('input[name="'+'urltoXml'+'"]').css('background-color','#FF8282');
+							
+							$('#'+'urltoXml'+'ErrorText').css('padding','5px');
+							$('#'+'urltoXml'+'ErrorText').css('display','inline-table');}
+					},"json");
+				}
+		
+		}	
+	
+}
+</script>
+<script>
+function reset() {
+ var input1 = document.getelementbyid("input01");
+     input1.value = catalogpageupdate;
+ var input2 = document.getelementbyid("input02");
+     input2.value = updateType;
+ var input3 = document.getelementbyid("input03");
+     input3.value = updateDelivery;
+}
+</script>
+<script>
+function reset2() {
+ var input4 = document.getElementById("input04");
+     input4.value = urltoXml;
+     if (debug==1) {
+	 $('#input05').prop("checked","checked");}
+	 else {
+	 $('#input05').prop('checked',false); }
+}
+</script>

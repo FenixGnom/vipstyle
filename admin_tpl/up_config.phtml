@@ -1,0 +1,228 @@
+<div class="page-header">
+    <h2>Базовые настройки магазина</h2>
+    <small>В данном разделе Вы можете указать базовые параметры Вашего интернет магазина</small>
+</div>
+
+<div class="tabbable tabs-left" id="myTab">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#shop" data-toggle="tab">Магазин</a></li>
+        <li class=""><a href="#partner" data-toggle="tab">Партнерские данные</a></li>
+        <li class=""><a href="#admin" data-toggle="tab">Администратор</a></li>
+        <li class=""><a href="#cache" data-toggle="tab">Кеширование</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="shop">
+            
+        </div>
+        <div class="tab-pane" id="partner">
+            
+        </div>
+        <div class="tab-pane" id="admin">
+           
+        </div>
+		<div class="tab-pane" id="cache">
+           
+        </div>
+    </div>
+</div>
+
+
+<div class="modal hide fade" id="myModal">
+    <div class="modal-header">
+    <button class="close" data-dismiss="modal">×</button>
+    <h3 id="link"></h3>
+    </div>
+    <div class="modal-body" id="modalTextIn" style="text-align: center;">
+	<h4 style="padding: 5px 0 5px 0;">Настройки успешно изменены</h4>
+	<input type="hidden" id="delSeoMainNah" />
+	<button type="button" class="btn btn-primary" data-dismiss="modal" onclick="onS();">ОК</button>
+    </div>
+    <div class="modal-footer">
+    </div>
+    </div>
+
+<script>
+var typeActive='';
+	function onS()
+	{
+	
+		window.location.href='/admin/settingsreload/obj/'+typeActive;
+	}
+	function ShowTabSettings(type)
+	{
+		if(!type)
+			type='shop';
+		jQuery.post(
+		'/admin/configparam/type/'+type,
+		{},
+		function (html){		
+			$('#'+type).html(html);
+		},
+   	'html');	
+	}
+	
+function SetOptionShop(t)
+{
+	
+	SetError(t);
+	/*if(!t)
+			t='shop';*/
+		if(t=='shop')
+			{
+				if (checkshop())
+				{
+			
+									jQuery.post(
+						'/admin/configparam/type/'+t,
+						$('#'+t+'ParamsForm').serialize(),
+						function (json){
+							if(json.act==1)
+							{
+								typeActive=t;
+								$('#myModal').modal('show');
+							}				
+							else
+							{
+								if(json.act!=99)
+								SetError(t,json.error)
+							}			
+						},
+					'json');
+					}
+		}
+
+		if(t=='partner')
+		{
+		    if (checkpartner())
+				{
+			
+	
+					
+						             jQuery.post(
+									'/admin/configparam/type/'+t,
+									$('#'+t+'ParamsForm').serialize(),
+									function (json){
+										if(json.act==1)
+										{
+											typeActive=t;
+											$('#myModal').modal('show');
+										}				
+										else
+										{
+											if(json.act!=99)
+											SetError(t,json.error)
+										}			
+									},'json');
+					}
+	
+		
+		
+		
+		}
+		
+		if(t=='admin')
+		{
+		
+		
+		
+		
+		jQuery.post(
+		'/admin/configparam/type/'+t,
+		$('#'+t+'ParamsForm').serialize(),
+		function (json){
+			if(json.act==1)
+			{
+				typeActive=t;
+				$('#myModal').modal('show');
+			}				
+			else
+			{
+				if(json.act!=99)
+				SetError(t,json.error)
+			}			
+		},
+   	'json');	
+	 }
+	 if(t=='cache')
+		{		
+		jQuery.post(
+		'/admin/configparam/type/'+t,
+		$('#'+t+'ParamsForm').serialize(),
+		function (json){
+			if(json.act==1)
+			{
+				typeActive=t;
+				$('#myModal').modal('show');
+			}				
+			else
+			{
+				if(json.act==3)
+				{
+					alert('На вашем сервере не установлена служба memchache.');
+				}
+				else
+					SetError(t,json.error);
+				
+			}			
+		},
+		'json');	
+		}
+	
+}
+function SetError(type,error)
+{
+	var e=new Array();
+	if(type=='admin')
+	{
+		e[0]='login';
+		e[1]='oldPassword';
+		e[2]='Password';
+		e[3]='PasswordRe';
+	}
+	
+	if(type=='partner')
+	{
+		e[0]='partnerid';
+		e[1]='salt';
+	}
+		if(type=='shop')
+	{
+		e[0]='ProductsPerPage';
+		e[1]='ProductsPageSlide';
+		e[2]='interval';
+	}
+	if(type=='cache')
+	{
+		e[0]='dir';
+		e[1]='CachingIp';
+		e[2]='CachingPort';
+	}
+	
+	
+	if(error)
+	{
+		for(var i=0;i<e.length;i++)
+		{
+			if(error[e[i]]){
+			$('input[name="'+e[i]+'"]').css('background-color','#FF8282');
+			$('#'+e[i]+'ErrorText').html(error[e[i]]);
+			$('#'+e[i]+'ErrorText').css('padding','5px');}
+		}
+	}
+	else{
+		for(var i=0;i<e.length;i++)
+		{
+			$('input[name="'+e[i]+'"]').css('background-color','#fff');
+			$('#'+e[i]+'ErrorText').html('');
+			$('#'+e[i]+'ErrorText').css('padding','0px');
+		}
+	}
+	
+}
+
+	ShowTabSettings('shop');
+	ShowTabSettings('partner');
+	ShowTabSettings('admin');
+	ShowTabSettings('cache');
+	
+</script>

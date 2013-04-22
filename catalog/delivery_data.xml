@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<deliverys>
+    <delivery id="mskpoint2" amountprice="0">
+        <name>Самовывоз из Москвы</name>
+        <text>
+            &lt;p&gt;&amp;nbsp;&lt;/p&gt;
+            &lt;p&gt;&lt;strong&gt;Пункт выдачи - Москва (ул. Большая серпуховская, дом 31, корпус 6)&lt;/strong&gt;&lt;/p&gt;
+            &lt;p&gt;Название: курьерская служба &quot;День в день&quot;&lt;/p&gt;
+            &lt;p&gt;Срок доставки: 3 - 5 дней&lt;/p&gt;
+            &lt;p&gt;Станция метро: Серпуховская&lt;/p&gt;
+            &lt;p&gt;Время работы:&lt;/p&gt;
+            &lt;p&gt;с 10:00 до 19:00 (в будни)&lt;/p&gt;
+            &lt;p&gt;с 10:00 до 18:00 (в выходные)&lt;/p&gt;
+            &lt;p&gt;Стоимость доставки: бесплатно&lt;/p&gt;
+            &lt;p&gt;Телефон:&lt;/p&gt;
+            &lt;p&gt;+7 (499) 237-20-19&lt;/p&gt;
+            &lt;p&gt;+7 (916) 803-12-52&lt;/p&gt;
+
+            &lt;p&gt;&amp;nbsp;&lt;/p&gt;
+        </text>        
+    </delivery> 
+    <delivery id="courier" amountprice="0">
+        <name>Курьерская доставка по Москве</name>
+        <text>
+        &lt;p&gt;&amp;nbsp;&lt;/p&gt;                
+        &lt;strong&gt;Срок доставки&lt;/strong&gt; 3 - 5 дней.&lt;br&gt; &lt;strong&gt;Стоимость доставки&lt;/strong&gt;&amp;nbsp;заказа до 5 кг. в пределах МКАД 160 руб.
+			Доплата за превышение веса в 5 кг (за каждый, в т.ч. Неполный кг) 25 руб.
+			Время доставки с 11:00 до 18:00. (по рабочим дням)
+			&lt;strong&gt;Стоимость доставки за пределы МКАД&lt;/strong&gt; будет выше, надбавка зависит от степени дальности и рассчитывается по тарифу:&amp;nbsp;
+			До 5 км от МКАД (до 5 кг) 190руб.
+			От 5 км и далее (за каждый километр) 20руб.
+			&lt;strong&gt;Оплата отказа&lt;/strong&gt;
+			Оплата поездки курьера в случае отказа от заказа полностью в пределах МКАД 150 руб.
+			Оплата поездки курьера в случае отказа от заказа полностью за МКАД 160 руб.
+			
+			&lt;p&gt;&amp;nbsp;&lt;/p&gt;   
+        </text>
+    </delivery>
+    <delivery id="courierspb" amountprice="11">
+        <name>Курьерская доставка по Санкт-Петербургу</name>
+        <text>
+            &lt;p&gt;&amp;nbsp;&lt;/p&gt;       
+            &lt;strong&gt;Срок доставки&lt;/strong&gt; 3 - 5 дней&lt;br/&gt;
+			Время доставки с 11:00 до 18:00. (по рабочим дням)&lt;br/&gt;&lt;br/&gt;
+			&lt;strong&gt;Стоимость доставки&lt;/strong&gt;&amp;nbsp;&lt;br&gt;
+        </text>
+    </delivery>
+    <delivery id="postal" amountprice="8">
+        <name>Доставка Почтой России (Отправление 1 класса)</name>
+        <text>
+            &lt;p&gt;&amp;nbsp;&lt;/p&gt; 
+            &lt;strong&gt;Доставка с наложенным платежом&lt;/strong&gt; осуществляется только по территории РФ, кроме Чеченской Республики (Почта России не принимает данный вид отправления в это направление)&lt;br&gt; Так же временами сезонно закрыты некоторые северные регионы, в частности Якутск и область.&lt;br&gt; Заказы высылаются Почтой России отправлением 1 класса.
+			&lt;br&gt;
+			&lt;strong&gt;Доставка за пределы Российской Федерации в любую точку мира&lt;/strong&gt;&amp;nbsp;осуществляется только после полной предоплаты заказа.&amp;nbsp; &lt;strong&gt;&lt;br&gt;&lt;/strong&gt;
+			&lt;br&gt;
+			&lt;strong&gt;Сроки доставки&lt;/strong&gt;: до 20 дней, для крупных городов около 10 дней
+			подробнее о сроках доставки на сайте &lt;a href=&quot;http://russianpost.ru/rp/servise/ru/home/postuslug/1class/1class_deadline&quot;&gt;Почта России&lt;/a&gt;.&lt;br&gt; &lt;br&gt; 
+&lt;br&gt; &lt;strong&gt;Тарифы на денежный перевод&lt;/strong&gt;. При получении посылки с наложенным платежом на почте взимается комиссия за почтовый перевод по тарифам указанным ниже.&lt;br&gt; В некоторых районах индивидуальные тарифы - подробнее на сайте &lt;a href=&quot;http://russianpost.ru&quot;&gt;Почта России&lt;/a&gt;&lt;br&gt; &lt;br&gt; 
+				&lt;table &gt;
+				
+					&lt;tr&gt;
+						&lt;td&gt;до 1.000руб.&lt;/td&gt;
+						&lt;td&gt;25 руб. + 5% от пересылаемой суммы&lt;/td&gt;
+					&lt;/tr&gt;
+					&lt;tr&gt;
+						&lt;td&gt;свыше 1.000руб. до 5.000руб.&lt;/td&gt;
+						&lt;td&gt;75 руб. + 4% от суммы выше 1.000руб&lt;/td&gt;
+					&lt;/tr&gt;				
+				&lt;/table&gt;&lt;br&gt;
+                        &lt;strong&gt;Стоимость доставки:&lt;/strong&gt;
+        </text>
+    </delivery>    
+    <delivery id="pointnsk" amountprice="0">
+        <name>Самовывоз из Новосибирска</name>
+        <text>
+            &lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Пункт выдачи - Новосибирск (пр. К. Маркса, дом 47)&lt;/strong&gt;&lt;/p&gt;
+			&lt;p&gt;Срок доставки: 3 - 7 дней&lt;/p&gt;
+			&lt;p&gt;Станция метро:Студенческая&lt;/p&gt;
+			&lt;p&gt;Время работы: с 10:00 до 20:00, без выходных&lt;/p&gt;
+			&lt;p&gt;Стоимость доставки: бесплатно&lt;/p&gt;
+			&lt;p&gt;Телефон: +7 (383)&amp;nbsp; 233-39-09&lt;/p&gt;
+			
+			&lt;p&gt;&lt;br&gt;&lt;strong&gt;Пункт выдачи - Новосибирск (ул.Крылова, дом 7)&lt;/strong&gt;&lt;/p&gt;
+			&lt;p&gt;Срок доставки: 3 - 7 дней&lt;/p&gt;
+			&lt;p&gt;Станция метро: Красный проспект&lt;/p&gt;
+			&lt;p&gt;Время работы: с 10:00 до 20:00, без выходных&lt;/p&gt;
+			&lt;p&gt;Стоимость доставки: бесплатно&lt;/p&gt;
+			&lt;p&gt;Телефон: +7 (383)&amp;nbsp; 233-29-28&lt;/p&gt;		
+			
+			&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+        </text>
+    </delivery>
+    <delivery id="sng" amountprice="0">
+        <name>Международная доставка</name>
+        <text>
+            &lt;p&gt;&amp;nbsp;&lt;/p&gt;Доставка за пределы России осуществляется только после &lt;strong&gt;полной оплаты заказа&lt;/strong&gt;.  Тарифы на международную доставку такие же, как на &lt;a href=&quot;#region&quot;&gt;доставку почтой России&lt;/a&gt;.
+			Сроки доставки зависят от направления и работы таможни, в среднем колеблются от 20 до 40 дней.
+			Категория отправления для международных заказов - мелкий пакет. &amp;nbsp;		
+			
+			&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+        </text>        
+    </delivery>
+      
+</deliverys>

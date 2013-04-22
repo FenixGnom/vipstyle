@@ -1,0 +1,35 @@
+<div class="page-header">
+    <h2>Список фраз</h2>
+    <small>С помощью данного раздела Вы сможете посмотреть поисковые фразы.</small>
+</div>
+<div class="forms">
+	<?=$this->vars['searchPanel']?>
+</div>
+<?$countAll=count($this->vars['allStat']);?>
+<table class="table table-striped table-bordered table-condensed">
+	<thead>
+        <tr>
+            <th width="85%" style="text-align: center;">Поисковая фраза</th>
+            <th width="15%" style="text-align: center;">Количество переходов</th>
+           
+        </tr>
+		<?if($countAll>0):?>
+			<tbody>
+				<?php $i=0; while($i<$countAll) :?>
+					<tr>
+						<td style="text-align: center;"><?=$this->vars['allStat'][$i]['phrases']?></td>
+						<td style="text-align: center;"><?=$this->vars['allStat'][$i]['counts']?></td>
+																	
+					</tr>
+				<?$i++;endwhile;?>
+			</tbody>
+		<?else :?>
+			<tbody>
+				<tr>
+					<td colspan="2" style="text-align: center;">Нет данных</td>
+					
+				</tr>
+			</tbody>
+		<?endif;?>
+    </thead>
+</table>

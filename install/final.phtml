@@ -1,0 +1,20 @@
+<?php $final = new install_finalStage('final'); $final->getForm(); ?>
+<div class="contentTitle"><span>Шаг 4. Поздравляем!</span></div><br/>
+<div>Магазин успешно установлен!</div><br/>
+<div>Ваши данные:</div><br/>
+<div>Хост: <strong><?php echo $_SESSION['db_host'] ?></strong></div>
+<div>Название базы данных: <strong><?php echo $_SESSION['db_dbname'] ?></strong></div>
+<div>Логин пользователя: <strong><?php echo $_SESSION['db_user'] ?></strong></div>
+<div>Пароль пользователя: <strong><?php echo $_SESSION['db_pwd'] ?></strong></div>
+<div>Ref код: <strong><?php echo $_SESSION['partner_ref'] ?></strong></div>
+<div>SALT код: <strong><?php echo $_SESSION['partner_salt'] ?></strong></div><br/>
+<div>Данные для входа в <a href="/admin">администраторскую панель</a> по умолчанию:</div><br/>
+<div>Логин: <strong>admin</strong></div>
+<div>Пароль: <strong>3.3</strong></div><br/>
+<div>Внимание! Теперь обновление можно сделать со страницы "Обновление данных каталога", которая доступна через пункт меню "Настройки -> Обновление каталога".</div><br/>
+<div>Примечание: Конфигурационные параметры можно изменить в <a href="/admin">администраторской панели</a></div></br></br>
+	<form action="/admin" method="POST">
+		<input type="submit" name="submit" value="Перейти в администраторскую панель"/>
+	</form>
+</div>
+<? unset($_SESSION['stage_name']); ?>

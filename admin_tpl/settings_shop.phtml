@@ -1,0 +1,181 @@
+<script>
+var shopname='<?=$this->vars['data']['partnername']?>';
+var contactemail='<?=$this->vars['data']['milo_partner']?>';
+var contactphone='<?=$this->vars['data']['phone_partner']?>';
+var generalMails='<?=$this->vars['data']['general_mails']?>';
+var contacticq='<?=$this->vars['data']['partnerICQ']?>';
+var ProductsPerPage='<?=$this->vars['data']['prodperpage']?>';
+var ProductsPageSlide='<?=$this->vars['data']['prodpageslade']?>';
+var interval='<?=$this->vars['data']['interval']?>';
+</script>
+<form class="form-horizontal" onsubmit="SetOptionShop('shop');return false;"; id="shopParamsForm">
+		<fieldset>
+			<div class="control-group">
+				<label class="control-label" for="input01">Название Вашего магазина:</label>
+				<div class="controls">
+					<input type="text" class="input-xlarge" name="shopname" id="input01" value="<?=$this->vars['data']['partnername']?>">
+					<p class="help-block">Это название будет выводиться в шапке всех страниц сайта, если иной вывод не предусмотрен выбранной темой оформления.</p>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="input02">Эл.адрес Вашего магазина:</label>
+				<div class="controls">
+					<input type="text" class="input-xlarge" name="contactemail" id="input02" value="<?=$this->vars['data']['milo_partner']?>">
+					<p class="help-block">Этот адрес будет выводится в разделе "Контакты", если иной вывод не предусмотрен выбранной темой оформления.</p>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="input03">Эл.адрес магазина "Всемайки":</label>
+				<div class="controls">
+					<input type="text" name="generalMails" class="input-xlarge" id="input03" value="<?=$this->vars['data']['general_mails']?>">
+					<p class="help-block">Этот адрес будет использован в разделе "Обратной связи", если иной вывод не предусмотрен выбранной темой оформления.</p>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="input05">Телефон:</label>
+				<div class="controls">
+					<input type="text" name="phonepartner" class="input-xlarge" id="input05" value="<?=$this->vars['data']['phone_partner']?>">
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="input04">ICQ:</label>
+				<div class="controls">
+					<input type="text" name="contacticq" class="input-xlarge" id="input04" value="<?=$this->vars['data']['partnerICQ']?>">
+				</div>
+			</div>
+					
+			
+			<div class="control-group">
+				<label class="control-label" for="input04">Каталог на главной странице:</label>
+				<div class="controls">
+					<select size="1" name="catindex">
+						<option value="0">Популярные товары</option>
+						<?$i=0; while($i<count($this->vars['cat'])):?>
+						<?if((int)$this->vars['data']['catindex']==$this->vars['cat'][$i]['id']):?>
+						<?php $selected=' selected';?>
+						<?php else : $selected='';?>
+						<?php endif;?>
+						<option value="<?php echo $this->vars['cat'][$i]['id'];?>"<?php echo $selected;?>><?php echo $this->vars['cat'][$i]['name'];?></option>
+						<?$i++; endwhile;?>
+					</select>
+				</div>
+			</div>
+			
+			<div class="control-group">
+				<label class="control-label" for="input04">Количество маек на странице:</label>
+				<div class="controls">
+					<input type="text" name="ProductsPerPage" class="input-xlarge" id="input06" value="<?=$this->vars['data']['prodperpage']?>">
+					<span id="ProductsPerPageErrorText" class="alert-error" ></span>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="input04">Количество ссылок на соседние страницы каталога (paging):</label>
+				<div class="controls">
+					<input type="text" name="ProductsPageSlide" class="input-xlarge" id="input07" value="<?=$this->vars['data']['prodpageslade']?>">
+					<span id="ProductsPageSlideErrorText" class="alert-error" ></span>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="input04">Вывод похожих товаров:</label>
+				<div class="controls">
+					<select name="showOther" id="showmode">
+						<option value="0"<?php if($this->vars['data']['showOther']==0) echo ' selected';?>>не выводить</option>
+						<option value="1"<?php if($this->vars['data']['showOther']==1) echo ' selected';?>>выводить</option>						
+					</select>
+					
+				</div>
+			</div>
+			
+			<div class="control-group">
+				<label class="control-label" for="input04">Отображать товары:</label>
+				<div class="controls">
+					<select name="showmode" id="showmode">
+						<option value="0"<?php if($this->vars['data']['showmode']==0) echo ' selected';?>>все</option>
+						<option value="1"<?php if($this->vars['data']['showmode']==1) echo ' selected';?>>все, кроме скрытых</option>
+						<option value="2"<?php if($this->vars['data']['showmode']==2) echo ' selected';?>>только разрешенные</option>
+					</select>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="input09">Период обновления остатков(в ceкундах):</label>
+				<div class="controls">
+					<input type="text" name="interval" class="input-xlarge" id="input09" style="width:100px;" value="<?=$this->vars['data']['interval']?>">
+					<span id="intervalErrorText" class="alert-error" ></span>
+				</div>
+			</div>
+			
+		</fieldset>
+
+		<div class="form-actions">
+			<button type="submit" class="btn btn-primary">Сохранить изменения</button>
+			<button class="btn" onclick="reset();" type="button">Сбросить</button>
+		</div>
+</form>
+
+<script>
+function checkshop()
+{
+var q = '<?=$this->vars['data']['partnername']?>';
+var qnew = $('#input01').val();
+
+var w = '<?=$this->vars['data']['milo_partner']?>';
+var wnew = $('#input02').val();
+
+var h = '<?=$this->vars['data']['general_mails']?>';
+var hnew = $('#input03').val();
+
+var r = '<?=$this->vars['data']['phone_partner']?>';
+var rnew= $('#input05').val();
+
+var k = '<?=$this->vars['data']['partnerICQ']?>';
+var knew =$('#input04').val();
+
+var y = '<?=$this->vars['data']['prodperpage']?>';
+var ynew =  $('#input06').val();
+
+var u = '<?=$this->vars['data']['prodpageslade']?>';
+var unew = $('#input07').val();
+
+var i = '<?=$this->vars['data']['showmode']?>';
+var inew = $('select[name=showmode] option:selected').val();
+
+var o = '<?=$this->vars['data']['showOther']?>';
+var onew = $('select[name=showOther] option:selected').val();
+
+var l='<?=(int)$this->vars['data']['catindex']?>';
+var lnew=$('select[name=catindex] option:selected').val();
+
+var ttt='<?=(int)$this->vars['data']['interval']?>';
+var tttnew=$('name[name=interval]').val();
+if(q==qnew && w==wnew && h==hnew && r==rnew && k==knew && y==ynew && u==unew && i==inew && o==onew && l==lnew && ttt==tttnew)
+		{  
+		return false;
+		}
+else
+		{
+		return true;
+		}
+}
+</script>
+
+
+<script>
+ function reset () {
+    var input1 = document.getElementById("input01");
+            input1.value = shopname;
+    var input2 = document.getElementById("input02");
+            input2.value = contactemail;
+    var input3 = document.getElementById("input03");
+            input3.value = generalMails;
+	var input4 = document.getElementById("input04");
+            input4.value = contacticq;
+	var input5 = document.getElementById("input05");
+            input5.value = contactphone;		
+	var input6 = document.getElementById("input06");
+            input6.value = ProductsPerPage;
+	var input7 = document.getElementById("input07");
+            input7.value = ProductsPageSlide;
+	var input9 = document.getElementById("input09");
+            input9.value = interval;
+}
+</script>

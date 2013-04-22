@@ -1,0 +1,159 @@
+<?php header("Content-Type: text/html; charset=utf-8"); ?>
+<?
+function ReturnCountOffers($data)
+{
+	$count=0;
+	$dT=unserialize($data);
+	//var_dump($dT['cutMain']);
+        
+        if(isset($dT['cutMain']))
+            $off=$dT['cutMain'];
+        else
+            $off=$dT;
+	foreach($off as $key=>$val)
+        {    
+           $count=$count+$val['amount'];
+	}
+	return 	$count;
+}
+
+function returnDelivery($type)
+{
+	$s='Почта';
+	switch($type)
+	{
+		case 'POSTAL':
+			$s='Почта';
+		break;
+		case 'COURIER':
+			$s='Доставка курьером';
+		break;
+		case 'MSKPOINT2':
+			$s='Пункт выдачи - Москва (ул. Большая Серпуховская 31, корпус 6)';
+		break;
+		case 'COURIERSPB':
+			$s='Доставка курьером';
+		break;
+		case 'POINTNSK':
+			$s='Пункт выдачи – Новосибирск (ул.Маркса, 47)';
+		break;
+		case 'POINTNSK2':
+			$s='Пункт выдачи – Новосибирск (ул.Крылова, 7)';
+		break;
+		
+		
+	}
+	return $s;
+}
+?>
+<div class="page-header">
+    <h2>Заказы</h2>
+    <small>С помощью данного раздела Вы сможете посмотреть заказы, сделанные с Вашего партнерского магазина.</small>
+</div>
+<div class="container" style="margin-bottom:10px;">
+    <span><?if(!isset($this->vars['f'])):?>Все<?else:?><a href="/admin/showorders">Все</a><?endif;?></span> | 
+    <span><?if(!isset($this->vars['f'])):?><a href="/admin/showorders/filter/true">Принятые </a><?else:?>
+		<?if($this->vars['f']!='true'):?>
+			<a href="/admin/showorders/filter/true">Принятые </a>
+		<?else:?>
+			Принятые 
+		<?endif;?>
+	<?endif;?></span> | 
+	<span><?if(!isset($this->vars['f'])):?><a href="/admin/showorders/filter/false">Не принятые </a><?else:?>
+		<?if($this->vars['f']!='false'):?>
+			<a href="/admin/showorders/filter/false">Не принятые </a>
+		<?else:?>
+			Не принятые 
+		<?endif;?>
+	<?endif;?></span>
+   
+</div>
+<?$countAll=count($this->vars['order']);?>
+<?php echo $this->vars['paging']?>
+<table class="table table-striped table-bordered table-condensed" >
+	<thead>
+        <tr>
+            <th width="5%" style="text-align: center;">Номер заказа</th>
+            <th width="5%" style="text-align: center;">Дата заказа</th>
+            <th width="18%" style="text-align: center;">Кол-во товарных единиц</th>
+            <th width="25%" style="text-align: center;">Способ доставки</th>
+            <th width="15%" style="text-align: center;">Сумма</th>
+            <th width="25%" style="text-align: center;">Статус заказа</th>
+            <th width="15%"></th>
+        </tr>
+		<?if($countAll>0):?>
+			<tbody>
+				<?php $i=0; while($i<$countAll) :?>
+					<tr>
+						<td style="text-align: center;" id="ord<?php echo $this->vars['order'][$i]['id'];?>"><?php echo $this->vars['order'][$i]['id_zakaz'];?></td>
+						<td style="text-align: center;"><?php echo date('d.m.Y',$this->vars['order'][$i]['data']);?></td>
+						<td style="text-align: center;"><?php echo ReturnCountOffers($this->vars['order'][$i]['log_zakaza']);?></td>
+						<td style="text-align: center;"><?php echo returnDelivery($this->vars['order'][$i]['dostavka']);?></td>
+						<td style="text-align: center;"><?php echo $this->vars['order'][$i]['summasdost'];?> руб.</td>
+						<td style="text-align: center;" id="stat<?php echo $this->vars['order'][$i]['id'];?>">
+							<?if($this->vars['order'][$i]['id_zakaz']==$this->vars['order'][$i]['data']):?>
+								не принят
+							<?else:?>
+								принят
+							<?endif;?>
+						</td>
+						<td style="text-align: center;"><a class="orders" id="<?php echo $this->vars['order'][$i]['id_zakaz'];?>" href="javascript:sh(<?php echo $this->vars['order'][$i]['id_zakaz'];?>);">Смотреть</a></td>									
+					</tr>
+				<?$i++;endwhile;?>
+			</tbody>
+		<?else :?>
+			<tbody>
+				<tr>
+					<td colspan="7" style="text-align: center;">Нет данных</td>
+					
+				</tr>
+			</tbody>
+		<?endif;?>
+    </thead>
+</table>
+<div class="modal hide fade" id="myModal">
+    <div class="modal-header">
+    <button class="close" data-dismiss="modal">×</button>
+    <h3 id="link"></h3>
+    </div>
+    <div class="modal-body" id="modalTextIn">
+    
+    </div>
+    <div class="modal-footer">
+    </div>
+</div>
+    
+<script>
+function sh(link)
+{
+	jQuery("#modalTextIn").html('<div style="width:100%;height:200px;background: url(\'/admin_tpl/images/loadinfo.net.gif\') center no-repeat;"></div>');
+	
+	jQuery("#link").html('');
+	$('#myModal').modal('show');
+	jQuery.ajax({
+            type: "GET",
+            url: '/admin/showone/id/'+link,
+            beforeSend: function() {
+				jQuery("#loading").css('display','block');
+				
+            },
+            complete: function(){
+                    jQuery("#loading").css('display','none');
+		},
+            success: function(html){			
+				
+                jQuery("#loading").css('display','none');
+				
+				jQuery("#modalTextIn").html(html);
+				
+				jQuery("#link").html('Заказ №'+link);
+               
+               
+            }
+
+      });
+	
+	
+}
+
+</script>

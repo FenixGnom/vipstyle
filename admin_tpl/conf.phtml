@@ -1,0 +1,61 @@
+
+//////////  Database   /////////db_settings/////
+$DB_Type = 'MySql';
+$DB_Host = '<?php echo $this->vars['db_host'];?>';
+$DB_Name = '<?php echo $this->vars['db_name'];?>';
+$DB_UserName = '<?php echo $this->vars['db_login'];?>';
+$DB_Password = '<?php echo $this->vars['db_pass'];?>';
+////////  End Database   ///////
+
+//////  Admin Partner Settings ///////admin_info/////
+$AdminLogin = '<?php echo $this->vars['name_login'];?>';
+$AdminPassword = '<?php echo $this->vars['name_pas'];?>';
+$AdminFlag = '<?php echo $this->vars['flag'];?>';
+
+//////  Partner Settings ///////tpl_settings/////
+$PathToTemplate = '<?php echo str_replace('"','',$this->vars['path_to_template']);?>';
+
+////  End Partner Settings /////
+
+////////  User Settings ////////user_settings/////
+$ShowMode = <?php echo $this->vars['showmode'];?>;
+$CatStart = <?php echo $this->vars['catindex'];?>;
+$ProductsPerPage = <?php echo $this->vars['ProductsPerPage'];?>;
+$ProductsPageSlide = <?php echo $this->vars['ProductsPageSlide'];?>;
+$AnswerServers = <?php echo $this->vars['ansverServers'];?>;
+$PartnerShopName = '<?php echo str_replace('"','',$this->vars['PartnerShopName']);?>';
+$PartnerShopMails = '<?php echo str_replace('"','',$this->vars['PartnerShopMails']);?>';
+$PartnerShowOthers = <?php echo str_replace('"','',$this->vars['showOther']);?>;
+$PartnerShopICQ ='<?php echo str_replace('"','',$this->vars['PartnerShopICQ']);?>';
+$PartnerID = '<?php echo str_replace('"','',$this->vars['PartnerID']);?>';
+$PartnerSalt = '<?php echo $this->vars['PartnerSalt'];?>';
+$GeneralSermerMail='<?php echo str_replace('"','',$this->vars['GeneralSermerMail']);?>';
+$PartnerPhone='<?php echo $this->vars['PartnerPhone'];?>';
+$PartnerFlagData='<?php echo $this->vars['partnerFlagData'];?>';
+//////  End User Settings //////
+
+////////Globals/////globalUrl/////
+//gate for orders
+$UrlForXML='<?php echo str_replace("'","\\'",$this->vars['UrlForXML']);?>';
+$PageForXML='<?php echo str_replace("'","\\'",$this->vars['PageForXML']);?>';
+$PortForXMLOrders=<?php echo str_replace("'","\\'",$this->vars['PortForXMLOrders']);?>;
+//upd by xml
+$UrlOfUpdatePr='<?php echo str_replace("'","\\'",$this->vars['cut_of_upd']);?>';
+$UrlOfUpdateType='<?php echo str_replace("'","\\'",$this->vars['cut_of_updT']);?>';
+$UrlOfUpdateDelivery='<?php echo str_replace("'","\\'",$this->vars['cut_of_updD']);?>';
+$TimeRenderType=<?php echo $this->vars['timeRenderOffer'];?>;
+
+///////End globals////////
+
+//////////// Cache /////////////cache_settings/////
+$CacheDir = '<?php echo $this->vars['dir'];?>';
+$CacheTableName = 'cache';
+$typeCaching = '<?php echo $this->vars['typeCaching'];?>';
+$MemCachingIp = '<?php echo $this->vars['CachingIp'];?>';
+$MemCachingPort = '<?php echo $this->vars['CachingPort'];?>';
+
+////////// End Cache ///////////
+
+//// Controller /////////////controllers_settings/////
+$controllerPath = 'controllers/';
+/////// End Controller

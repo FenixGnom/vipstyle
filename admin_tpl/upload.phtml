@@ -1,0 +1,48 @@
+<script src="/admin_tpl/scripts/jquery-1.7.2.min.js"></script>
+<?if(isset($this->vars['ver'])):?>
+  <script>   
+    parent.window.document.getElementById('src').value='<?=$this->vars['ver']?>';
+    parent.ImageDialog.showPreviewImage('<?=$this->vars['ver']?>');
+  </script>  
+<?endif;?>
+<form method="post" enctype="multipart/form-data" id="myUploadForm" action="/admin/adminupload" >
+    <input type="file" name="files" id="file_attachment"  onchange="submitIn();"/>
+</form>
+<script>
+    function submitIn()
+    {
+        parent.window.document.getElementById('Error').innerHTML='';
+        var error=0;
+        var IE='\v'=='v';
+        if(!IE){
+            var fileInput = $("#file_attachment")[0];
+            var size = fileInput.files[0].size;
+            var type=fileInput.files[0].type;
+            var rh='';
+            if(size >2097152)
+            {                error=1;
+                rh+='Файл большего размера.';
+            }else{
+                
+                switch(type)
+                {
+                    case 'image/jpeg':
+                    case 'image/png':    
+                    break;
+                    default:
+                        error=1;
+                        rh+='Разрешены только файлы jpg,png';
+                    break;
+                    
+                }
+            }
+            
+        if(error==0)
+            window.document.getElementById('myUploadForm').submit();
+        else
+           parent.window.document.getElementById('Error').innerHTML=rh;
+        }
+        else
+            window.document.getElementById('myUploadForm').submit();
+    }
+</script>    

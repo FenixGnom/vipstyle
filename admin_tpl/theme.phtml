@@ -1,0 +1,45 @@
+<div class="page-header">
+    <h2>Внешний вид</h2>
+    <small>С помощью данного раздела Вы сможете изменить тему оформления Вашего интернет-магазина.</small>
+</div>
+
+<ul class="thumbnails">
+<?if($this->vars['theme']!=''):?>
+<?php $i=0;  while($i<count($this->vars['theme'])) :?>
+    <li class="span3">
+        <div class="thumbnail" style="height:333px;">
+            <div class="caption">
+                <h5><?=$this->vars['theme'][$i]['title']?></h5>
+            </div>
+			<?if($this->vars['theme'][$i]['img']!=''):?>
+            <img src="/themes/<?=$this->vars['theme'][$i]['img']?>" alt="">
+			<?else:?>
+			<img src="/admin_tpl/images/default.png" alt="">
+			<?endif;?>
+            <div class="caption">
+                <p></p>
+                <center>
+                    <? if ($this->vars['path_to_template']==$this->vars['theme'][$i]['path']):?>
+					<p><span class="badge badge-success">Текущая</span></p>
+					<?else:?>
+						<p><a href="javascript:void(0);" onclick="reTheme('<?=$this->vars['theme'][$i]['path']?>');" class="btn btn-primary">Включить</a></p>
+					<?endif;?>
+                </center>
+            </div>
+        </div>
+    </li>
+	
+<?php $i++; endwhile;?>
+<?endif;?>
+</ul>
+
+
+<script>
+function reTheme(p)
+{
+	$.post('/admin/tpls',{source:p},function(json){
+		if(json.act==1)
+			window.location.href="/admin/tpls";
+	},"json");
+}
+</script>

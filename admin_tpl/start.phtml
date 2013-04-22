@@ -1,0 +1,191 @@
+<div class="page-header">
+    <h2>Панель управления магазином Shop <?=$this->vars['version']?></h2>
+    <small>Через данную панель Вы можете управлять контентом страниц, настройками движка и другими параметрами, необходимыми для работы Вашего интернет-магазина.</small>
+</div>
+<!-- /Заголовок страницы -->
+
+<ul class="thumbnails">
+    <li class="span4">
+        <div class="thumbnail">
+            <h4>Отчет о проверке работоспособности</h4><br>
+            <br>
+
+            <table class="table table-striped">
+                <tbody>
+					<?if(isset($this->vars['error']['version'])):?>
+					<tr>
+						<td><span class="label label-warning">Внимание!</span></td>
+						<td>Данная версия  партнерского магазина устарела. <a href="/admin/margeversion">Обновить версию шоп</a></td>
+					</tr>
+				<?endif;?>
+				<?if(isset($this->vars['error']['xmlCatalog'])):?>
+					<tr>
+						<td><span class="label label-warning">Внимание!</span></td>
+						<td> Xml каталога товаров не найден. Проверьте правильность адреса. </td>
+					</tr>
+				<?endif;?>
+                                <?if(isset($this->vars['error']['temp_size'])):?>
+					<tr>
+						<?if($this->vars['error']['temp_size']==0):?>
+                                                    <td><span class="label label-warning">Внимание!</span></td>
+                                                    <td>Файл catalog/updateSize.shop не обнаружен. 
+                                                    <small>Создайте файл catalog/updateSize.shop с правами для записи.</small>
+                                                    </td>                                                    
+                                                <?endif;?>
+                                                <?if($this->vars['error']['temp_size']==1):?>
+                                                    <td><span class="label label-warning">Внимание!</span></td>
+                                                    <td>Файл catalog/updateSize.shop не доступен для записи. 
+                                                    <small>Назначьте права для записи на файл updateSize.shop</small>
+                                                    </td>                                                    
+                                                <?endif;?>    
+					</tr>
+				 <?endif;?> 
+                                        
+                                        
+                                 <?if(isset($this->vars['error']['temp_smarty'])):?>
+					<tr>
+						<?if($this->vars['error']['temp_smarty']==0):?>
+                                                    <td><span class="label label-warning">Внимание!</span></td>
+                                                    <td>Каталог templates_c не обнаружен. 
+                                                    <small>Создайте папку templates_c с правами для записи.</small>
+                                                    </td>                                                    
+                                                <?endif;?>
+                                                <?if($this->vars['error']['temp_smarty']==1):?>
+                                                    <td><span class="label label-warning">Внимание!</span></td>
+                                                    <td>Каталог templates_c не доступен для записи. 
+                                                    <small>Назначьте права для записи на папку templates_c</small>
+                                                    </td>                                                    
+                                                <?endif;?>    
+					</tr>
+				 <?endif;?> 
+                                        
+				<?if(isset($this->vars['error']['partnerCode'])):?>
+					<tr>
+						<td><span class="label label-warning">Внимание!</span></td>
+						<td>Неверное значение партнерского <?=$this->vars['error']['partnerCode']?> кода. <a href="/admin/config#partner">Изменить</a></td>
+					</tr>
+				<?endif;?>
+				<?if(isset($this->vars['error']['time'])):?>
+					<tr>
+						<td><span class="label label-warning">Внимание!</span></td>
+						<td>Увеличьте время работы скрипта до 90 секунд (текущее значение <?=$this->vars['time_in']?>). <small>Параметр max_execution_time в файле php.ini. Если у Вас нет такой возможности, обратитесь за помощью к компании, которая предоставляет Вам хостинг.</small>  </td>
+					</tr>
+				<?endif;?>
+				<?if(isset($this->vars['error']['memory'])):?>
+					<tr>
+						<td><span class="label label-important">Ошибка!</span></td>
+						<td>Слишком мало памяти выделено для php процесса (текущее значение <?=$this->vars['mem_in']?>). Рекомендуемое значение от 64M. <small>Параметр memory_limit в файле php.ini. Если у Вас нет такой возможности, обратитесь за помощью к компании, которая предоставляет Вам хостинг.</small></td>
+					</tr>
+				<?endif;?>
+				<?if(isset($this->vars['error']['password'])):?>
+					<tr>
+						<td><span class="label label-warning">Внимание!</span></td>
+						<td>Не изменен установленый по умолчанию пароль для доступа в панель управления. <a href="/admin/config#admin">Изменить</a></td>
+					</tr>
+				<?endif;?>
+				<?if(isset($this->vars['error']['updatecat'])):?>
+					<tr>
+						<td><span class="label label-warning">Внимание!</span></td>
+						<td>Не выполнено обновления каталога товаров. <a href="/admin/update">Обновить</a></td>
+					</tr>
+				<?endif;?>
+				<?if (!function_exists('curl_init')):?>
+					<tr>
+						<td><span class="label label-warning">Внимание!</span></td>
+						<td>Для более оптимального процесса обновления обратитесь к Вашему хостеру для включения библиотеки curl_init.</td>
+					</tr>
+				<?endif;?>
+				
+                <tr>
+                    <td><span class="label 
+					<?if($this->vars['error']['instal']==1):?>label-success">Хорошо!</span></td>
+						<td>Каталог install удален.</td>
+					<?else :?>label-important">Ошибка!</span></td>
+						<td>Удалите каталог install.</td>
+					<?endif;?>				
+                    
+                </tr>
+                <tr>
+                    <td><span class="label 
+					<?if($this->vars['error']['path']==1):?>label-success">Хорошо!</span></td>
+                    <td>Директория для временных файлов существует и доступна для записи.</td>
+					<?else:?>
+						label-important">Ошибка!</span></td>
+						<td>Директория для временных файлов отсутствует или недоступна для записи.</td>
+					<?endif;?>
+                </tr>
+                <tr>
+                    <td><span class="label 
+					<?if($this->vars['error']['conf']==2):?>label-success">Хорошо!</span></td>
+                    <td>Файл конфигурации доступен для записи.</td>
+					<?else:?>
+						label-important">Ошибка!</span></td>
+						<td>Файл конфигурации недоступен для записи.</td>					
+					<?endif;?>
+                </tr>			
+				</tbody>
+			</table>
+
+        </div>
+    </li>
+
+    <li class="span4" style="min-width:300px;">
+        <div class="thumbnail" >
+            <h4>Сводные данные</h4>
+            <br>
+
+            <table class="table table-striped">
+                <tbody><tr>
+                    <td>ref</td>
+                    <td><?php echo $this->vars['partnerInfo']['partnerid']?><br/>
+					<a href="/admin/config#partner">Изменить</a></td>
+                    
+					</tr>
+					<?/*<tr>
+						<td colspan="2">salt
+						<div style="width:250px;overflow:hidden;">
+							<?php echo $this->vars['partnerInfo']['salt']?>
+						</div>	<a href="/admin/config#partner">Изменить</a></td>
+						
+					</tr>*/?>
+					<tr>
+						<td>Тема оформления</td>
+						<td><?php echo str_replace('/','',$this->vars['tpl_settings']['source'])?><br/>
+						<a href="/admin/tpls">Изменить</a></td>
+						
+					</tr>
+				</tbody>
+			</table>
+
+            <h4>Сводная статистика</h4>
+            <br>
+
+            <table class="table table-striped">
+                <tbody><tr>
+                    <td>Заказов за сегодня</td>
+                    <td><?echo $this->vars['countOffers']['today']?></td>
+                </tr>
+                <tr>
+                    <td>Заказов за месяц</td>
+                    <td><?echo $this->vars['countOffers']['month']?></td>
+                </tr>
+                <tr>
+                    <td>Всего заказов на сумму</td>
+                    <td><?echo $this->vars['countOffers']['summ']?> руб</td>
+                </tr>
+            </tbody></table>
+        </div>
+    </li>
+
+    <li class="span4">
+        <div class="thumbnail">
+            <h4>Полезная информация</h4>
+            <hr>
+            <ul>
+                <li><a href="http://partners.vsemayki.ru/" target="_blank">Партнерская программа</a></li>
+                <!--<li><a href="#">Документация Shop 3.2.</a></li>
+                <li><a href="#">PressRelease Shop 3.2.</a></li>-->
+            </ul>
+        </div>
+    </li>
+</ul>  

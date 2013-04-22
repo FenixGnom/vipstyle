@@ -1,0 +1,16 @@
+<div class="page-header">
+    <h2>Обновление версии партнерского магазина</h2>    
+</div>
+<div id="inOkT" style="display:none;"></div>
+<div id="loads" style="width:100%;height:200px;background: url('/admin_tpl/images/loadinfo.net.gif') center no-repeat;"><div style="padding-top:50px;text-align:center;">Идет обновление версии. Эта процедура может занять несколько минут.</div></div>
+<script>
+	function mergeStart()
+	{
+		$.post('/admin/margeversion/start/ok',{type:1},function(html){
+			$('#inOkT').html(html);
+			$('#inOkT').css('display','block');
+			$('#loads').css('display','none');
+		})
+	}
+	mergeStart();
+</script>

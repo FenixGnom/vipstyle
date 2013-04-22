@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<delivery>
+  <courier>
+    <tariff amount="1" max="true">330</tariff>
+  </courier>
+  <courierspb>
+    <tariff amount="1" max="true">290</tariff>
+  </courierspb>
+  <postal>
+    <tariff amount="1">235</tariff>
+    <tariff amount="2">285</tariff>
+    <tariff amount="3">335</tariff>
+    <tariff amount="4">395</tariff>
+    <tariff amount="5">435</tariff>
+    <tariff amount="6">465</tariff>
+    <tariff amount="7">515</tariff>
+    <tariff amount="8" max="true">575</tariff>
+  </postal>
+  <pointnsk2>
+    <tariff amount="1" max="true">0</tariff>
+  </pointnsk2>  
+  <pointnsk>
+    <tariff amount="1" max="true">0</tariff>
+  </pointnsk>  
+  <mskpoint2>
+    <tariff amount="1" max="true">0</tariff>
+  </mskpoint2>  
+  <else>
+    <tariff amount="1">235</tariff>
+    <tariff amount="2">285</tariff>
+    <tariff amount="3">335</tariff>
+    <tariff amount="4">395</tariff>
+    <tariff amount="5">435</tariff>
+    <tariff amount="6">465</tariff>
+    <tariff amount="7">515</tariff>
+    <tariff amount="8" max="true">575</tariff>
+  </else>
+</delivery>

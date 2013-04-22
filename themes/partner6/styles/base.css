@@ -1,0 +1,898 @@
+/* Reset CSS	see http://meyerweb.com/eric/tools/css/reset/index.html*/
+html, body, applet, tr, td, th, object, iframe, h1, h2, h3, h4, h5, h6, em, img,  fieldset, form, label, legend, table, caption { 
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 11px;
+	background: transparent;
+	font-family:Arial;	
+}
+TD,TH{
+empty-cells: show;
+}
+body {
+	margin:0 auto;
+	width:1000px;
+	min-height:100%;
+	background-color: #fff;
+	font-family:Arial; 
+	font-size:11px;
+	line-height: 14px;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+td{
+vertical-align:top;
+}
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+a,a:hover,a:link  {
+	color:#005081;
+	font-family:Arial;
+	font-size:12px;
+	font-weight:normal;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*	заголовок	*/
+#header{
+	width:1000px;
+	/* height:176px; */
+	line-height:0px;
+	
+}
+#logo{
+	font-weight:bold;
+	text-align:center;
+	color:#3772aa;
+}
+.top_nav{
+	font-weight:bold;
+	text-align:center;
+	text-transform:uppercase;
+}
+#search{
+	vertical-align:top;
+	background:url(/themes/media/images/search.jpg) 0 0 no-repeat;
+}
+#top{
+	background:url(/themes/media/images/top.jpg) 0 0 no-repeat;
+	text-align:right;
+	vertical-align:top;
+	line-height:16px;
+	padding: 25px 22px 0 0 ;
+}
+#top-1{height:72px;}
+#top-2{height:33px;}
+#top-3{height:71px;}
+.search{
+	margin: 4px 0 0 0;
+	width:600px;
+	line-height:25px;
+	text-align:center;
+	font-family:Tahoma;
+	font-size:12px;
+	word-spacing:-4px;
+}
+.search a{
+	color:#FFF;
+	text-decoration:none;
+	padding:0 3px;
+	margin:0 1px 0 0;
+	font-weight:bold;
+}
+.search a:hover{
+	color:#FFF;
+	text-decoration:none;
+	padding:0 3px;
+	margin:0 1px 0 0;
+	font-weight:bold;
+	background-color: #db0247;
+	outline: 0;
+}
+
+/*	content	*/
+#content{
+	padding-top:10px;
+	width:705px;
+}
+
+#content th{
+	vertical-align:top;
+}
+#content h2 img{
+	margin:7px 0 0 7px;
+}
+#content h3 img{
+	margin:7px 0 7px 7px; 
+}
+
+/*	footer	*/
+#bottom{
+	height:64px;
+	background:url(/themes/media/images/bottom.jpg) 0 0 no-repeat;
+}
+#bottom div{
+	padding:27px 0 0 28px;
+}
+#bottom a, #bottom img{
+	vertical-align:middle;
+}
+
+#bottom a{
+	color:#FFF;
+	text-decoration:none;
+
+}	
+#bottom a:hover{
+	text-decoration:none;
+}
+.email{
+	padding:0 28px;
+}
+.key1{
+	background:url(/themes/media/images/key1.jpg) 0 50% no-repeat;
+	padding:0 7px;
+}
+/* search */
+#search-1{
+	float:left;
+	text-align:right;
+	margin:40px 0 0 0;
+	width:300px;
+}
+.find{
+	background: url(/themes/media/images/key4.jpg) 0 4px no-repeat;
+	padding: 0 0 0 10px;
+	color:#fff !important;
+	text-decoration:none!important;
+	font-family:Tahoma!important;
+	font-size:10px!important;
+	line-height: 15px;
+}
+
+.search-input{
+	width:210px;
+	margin:0;
+	padding:0;
+	height:22px;	
+}
+#search-form{
+	vertical-align: top;
+	width:400px;
+}
+
+/*	menu		*/
+
+#sidebar {
+	padding: 5px 0 5px 10px;
+	overflow:hidden;
+}
+#sidebar .ad{
+	text-align:center;
+	vertical-align:middle;
+	width:240px;
+	margin:2px 0 0 0px;
+	overflow:hidden;
+}
+
+#add .ad{
+	text-align:center;
+	vertical-align:middle;
+	width:120px;
+	margin:2px 0 0 0px;
+	overflow:hidden;
+}
+
+
+#sidebar .block{
+	background: url(/themes/media/images/polosa_bottom.jpg) 0 100% no-repeat;
+	width:243px;
+	padding: 0 0 25px 0;
+}
+#sidebar .img{
+	height:43px;
+}
+
+#sidebar ul{
+	margin:-4px 0 0 9px;
+	padding: 3px 0 0 0;
+	border:#dbdbdb solid;
+	border-width: 0 1px;
+	width:224px;
+	overflow:hidden;
+	font-size:12px;	
+}
+#sidebar ul li{
+	margin: 1px 0 1px 0;
+	padding: 0px 0 0px 23px;
+}
+#sidebar ul li a,#sidebar ul li a:hover{
+	display:block;
+	width:150px;
+	color:#005081;
+	text-decoration:none;
+	background: url(/themes/media/images/key2.gif) 0 60% no-repeat;
+	padding: 2px 0 1px 14px;
+}
+
+#sidebar ul li.bold{
+	margin: 1px 0 5px 0;
+}
+
+
+#sidebar ul li.bold a,#sidebar ul li.bold a:hover{
+	width:180px;
+	background-image:none;
+	font-weight:bold;
+	padding: 0;
+}
+
+#sidebar ul li.last a,#sidebar ul li.last a:hover{
+	background: url(/themes/media/images/key3.gif) 0 50% no-repeat;
+	padding: 1px 0 1px 14px;
+
+}
+
+/* paginator */
+.paginator {	
+	margin: 5px;
+	font-size:12px;	
+	text-align:center;
+	
+}
+.paginator li{
+	margin: 2px;
+	padding: 0px;
+	display:inline !important;
+	color:#f00;
+
+}
+.paginator li a{
+	color:#666;
+}
+.paginator li a:hover{
+	color:#000;
+}
+
+/* список фильмов */
+.list{
+	width:100%
+}
+span.header{
+	color:#065484;
+	font-size:12px;
+	font-weight:bold;
+}
+
+.list td,.list th{
+	padding: 0 0 10px 0;
+}
+
+.list tbody tr{
+	vertical-align:top;
+	height:1%;
+}
+.list th,.list th a, h1 { 
+	margin: 1em 0;
+	text-align:left;
+	color:#025080;
+	font-weight:normal;
+	text-decoration:none;
+	font-size: 1.5em;
+	padding: 0.2em 0.5em;
+}
+h2 { 
+	color:#000000;
+	font-family:Tahoma;
+	font-size:12px;
+	line-height:16px;
+	font-weight:bold;
+	text-decoration:none;
+}
+.list p{
+	padding: 5px 0
+}
+.ad, .ad_block{
+	text-align:center;
+}
+
+
+.bottom{
+	vertical-align: bottom;
+}
+.float_right{
+	float: right;
+	text-align: right;
+}
+.float_right span{
+	padding: 0px 0 8px 0;
+}
+
+
+.float_left{
+	float: left;
+	text-align: left;
+}
+/* фильм */
+.info td,.info th{
+	padding: 0 0 5px 0;
+}
+
+.info tbody tr{
+	vertical-align:top;
+	height:1%;
+}
+.info th,.info th a{
+	text-align:left;
+	color:#025080;
+	font-size:20px;
+	line-height:30px;
+	font-weight:normal;
+	text-decoration:none;
+}
+.info .center{
+	width: 160px;
+	text-align:center;
+	padding-right: 10px;
+}
+
+.rating{
+	height:36px;
+	line-height:36px;
+	color:#FFFFFF;
+	font-size:20px;
+	font-weight:bold;
+	text-transform:uppercase;
+	background:url(/themes/media/images/rating.gif) 50% 50% no-repeat;	
+	
+}
+/* account */
+
+.aligned label {
+	display:block;
+	float:left;
+	padding:3px 10px 0 0;
+	width:8em;
+}
+.required label, label.required {
+	color:#333333 !important;
+	font-weight:bold !important;
+}
+
+
+
+.upload {
+	width:100%;
+	border-bottom:1px solid #a6a6a6;
+	border-collapse: collapse;
+}
+
+.upload tr.header, .upload tr.header th{
+	vertical-align:top;
+	padding:0;
+	margin:0;
+	height:47px;
+	line-height:26px;
+	overflow:hidden;
+	background: #44b9eb url(/themes/media/images/upload_bg.gif) top repeat-x;
+}
+.upload tr.header th img{
+   padding-top:10px;
+}
+
+.upload th{
+	padding:2px;
+	text-transform:uppercase;
+	font-size: 11px;
+	color:#fff;
+	font-weight:bold;
+	border-right:1px solid #fff;
+	vertical-align:middle;
+	text-align:center;
+}
+.upload th.left{
+	background: transparent url(/themes/media/images/upload_left.gif) left top no-repeat !important;
+}
+.upload th.right{
+	background: transparent url(/themes/media/images/upload_right.gif) right top no-repeat !important;
+	border-right-width:0
+}
+
+.upload td{
+	padding:2px;
+	border:1px solid #d7d7d7;
+	vertical-align:middle;
+	text-align:center;
+}
+
+.box{
+	padding:15px 0 !important;
+	border:1px solid #d7d7d7
+}
+.box img{
+	margin: 7px;
+}
+.box_bg{
+	height:14px;
+	padding:0 !important;
+	background: transparent url(/themes/media/images/box_bg.jpg) top repeat-x;
+}
+
+.hidden, .hidden_genre, .hidden_tv{
+	display:none;
+}
+
+
+.vote{
+	width:100%;
+}
+
+
+.vote tr.header, .vote tr.header th{
+	vertical-align:top;
+	padding:0;
+	margin:0;
+	height:31px;
+	line-height:12px;
+	background: #44b9eb url(/themes/media/images/vote_top.gif) top repeat-x;
+}
+
+.vote tr.header th img{
+	margin-top: 8px;
+}
+
+
+
+.vote tr.header th.left{
+	background:  #44b9eb url(/themes/media/images/vote_top_left.gif) left top no-repeat !important;
+}
+.vote tr.header th.right{
+	background:  #44b9eb url(/themes/media/images/vote_top_right.gif) right top no-repeat !important;
+	border-right-width:0
+}
+.vote tr.header th.center{
+	color:#fff;
+	font-family:Tahoma;
+	font-size:12px;
+	line-height:30px;
+}
+
+.vote tr.footer, .vote tr.footer th{
+	vertical-align:top;
+	padding:0;
+	margin:0;
+	height:31px;
+	line-height:31px;	
+	background: #4da8d0 url(/themes/media/images/vote_bottom.gif) bottom repeat-x;
+}
+.vote tr.footer a, .vote tr.footer table{
+	padding:0;
+	margin:0;
+	font-size: 11px;
+	height:20px;
+	line-height:20px;
+	color:#fff;
+}
+.vote tr.footer th.left{
+	background: transparent url(/themes/media/images/vote_bottom_left.gif) left bottom no-repeat !important;
+}
+.vote tr.footer th.right{
+	background: transparent url(/themes/media/images/vote_bottom_right.gif) right bottom no-repeat !important;
+	border-right-width:0
+}
+
+.vote td{
+	padding:2px;
+}
+
+td.post,td.post1{
+	background:transparent url(/themes/media/images/upload_border.gif) right  repeat-y;
+	padding:2px;
+	vertical-align:top;
+	text-align:left;
+}
+.avatar{
+	vertical-align:middle !important;
+	text-align:center;
+	background:transparent url(/themes/media/images/noavatar.gif) center  no-repeat;
+	height:65px;
+	line-height:65px;
+	overflow: hidden;
+}
+.avatar img{
+	line-height:65px;
+}
+td.profile{
+	background:transparent url(/themes/media/images/upload_border.gif) left repeat-y;
+	border:1px solid #d7d7d7;
+	border-width:0 0 1px 0;	
+}
+td.perms, td.signature{
+	background:transparent url(/themes/media/images/upload_border.gif) right  repeat-y;
+	border:1px solid #d7d7d7;
+	border-width:0 0 1px 0;
+	vertical-align:bottom;
+}
+td.bg{
+	border:1px solid #d7d7d7;
+	border-width:0 0 1px 0;
+}
+td.perms{
+	text-align: right;
+}
+
+td.signature{
+	color: #999999;
+}
+
+.vote td.left{
+	background:transparent url(/themes/media/images/vote_border.gif) left repeat-y;
+}
+.vote td.right{
+	background:transparent url(/themes/media/images/vote_border.gif) right repeat-y;
+	border-right-width:0
+}
+.item_main_panel{
+	width:570px;
+	margin:0;
+	padding:0;
+}
+
+.item_main_box{
+	float:left;
+	height:330px;
+	width:190px;
+	/*
+	border:1px #f00 solid;
+	*/
+	overflow:hidden;
+	margin:0;
+	padding:0;
+}
+.item_main{
+	margin:0 20px 0 20px;
+}
+
+.item_main_image{
+	height:230px;
+	margin:0;
+	padding:0;
+	vertical-align: 50%;
+	text-align: center;
+}
+.item_main_image a{
+	text-align: center;
+	color:#C4C3C3;
+	text-decoration: none;
+	margin:0;
+	padding:0;
+}
+
+.item_main h2{
+	padding:0 2px;
+	text-transform:capitalize;
+	font-size: 11px;
+	color:#000;
+	font-weight:bold;
+	width:145px;
+	line-height:14px;
+	/*
+	white-space:nowrap;
+	overflow:hidden;
+	*/
+}
+.item_main h2 a,.item_main h2 a:hover{
+	color:#000;
+	text-decoration:none;
+	font-weight:bold;
+}
+
+.item_main .date,.item_main .genre{
+	padding:0 2px;
+	font-size: 9px;
+	color:#c4c3c3;
+}
+.item_main .date a{
+	color:#c4c3c3;
+	text-decoration:none
+}
+
+.coll_33{
+width:33%;
+float:left;
+}
+
+.clear{
+	clear:both;
+}
+.user_info, .user_info a{
+	color:#b1b1b1;
+	font-size: 9px;
+	font-weight: bold !important;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+.BitTorrent{
+	margin:25px 80px 0 0
+}
+.wide p{
+	font-style: italic;
+	margin: 5px 0;
+	
+}
+.wide input{
+	display: block;
+}
+.wide label{
+	display: block;
+	color:#065484;
+	font-size:12px;
+	font-weight:bold;
+	font-style: normal;
+}
+
+.justify{
+	text-align:justify;
+}
+
+ul.errorlist {
+	background:#F2F2F2 none repeat scroll 0 0;
+	border:1px solid red;
+	font-weight:bold;
+	margin:2px 0;
+	padding:2px;
+	text-align:center;
+}
+
+.errorlist li {
+	display: block;
+	padding: 4px 5px 4px 25px;
+}
+
+.errors {
+	background: #ffc;
+}
+
+.errors input, .errors select {
+	border: 1px solid red;
+}
+
+
+.smilies a, .smilies a:HOVER {
+	text-decoration: none !important;
+	padding: 2px;
+	margin: 0;
+} 
+.smilies a img{
+	padding: 0;
+	margin: 0;
+} 
+
+
+#id_captcha_1{
+	height: 35px !important;
+	width: 100px !important;
+	text-align: center !important;
+	font-size: 25px !important;
+	vertical-align: middle !important;
+	text-transform: uppercase;
+}
+img.captcha {
+	font-size: 25px !important;
+	vertical-align: middle !important;
+} 
+
+.counters{
+	float: right;
+	margin: 0 !important;
+	padding: 18px 0px 0 0  !important;
+	
+}
+
+.counter{
+	display:inline;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+.cyberhead{
+vertical-align:middle !important;
+}
+.cyberhead_text a,.cyberhead_text a:hover  {
+	color:#5D7A80;
+	font-size:10px;
+	font-weight:normal;
+	text-decoration:none;
+}
+.cyberhead_url a ,.cyberhead_url a:hover {
+	color:#777560;
+	font-weight:normal;
+	text-decoration:none;
+}
+/*
+.external {
+	background-image:url(/themes/media/images/external.png);
+	background-position:0 60%;
+	background-repeat:no-repeat;
+	padding-left:12px;
+}
+*/
+#tooltip {
+	position: absolute;
+	z-index: 3000;
+	width:250px;
+	border: 1px solid #269;
+	background-color: #48b;
+	padding: 0;
+	opacity: 0.85;
+	color:#fff;
+}
+#tooltip h3 {
+	background-color: #269;
+	padding-left:5px;
+	font-weight:bold;
+	font-size:1.4em;
+}
+#tooltip div {
+	padding-left:5px;
+	padding-right:5px;
+}
+.loading {
+	background-image:url(/themes/media/images/indicator.gif);
+	background-position:0 50%;
+	background-repeat:no-repeat;
+	padding-left:12px;
+}
+
+.pointer_open, .pointer_close {
+	background-image:url(/themes/media/images/nav/pointer_open.png);
+	background-position:0 1px;
+	background-repeat:no-repeat;
+	width: 13px;
+	height: 14px;
+}
+.pointer_close {
+	background-image:url(/themes/media/images/nav/pointer_close.png);
+}
+
+.star-rating,
+.star-rating a:hover,
+.star-rating a:active,
+.star-rating a:focus,
+.star-rating .current-rating{
+	background: url(/themes/media/images/starrating_stars.gif) left -1000px repeat-x;	/* В качестве фона для сылок, списка и текущего рейтинга зададим нашу картинку и расположим ее пока за пределами элемента */
+}
+
+.star-rating{
+	position: relative;
+	width: 125px; /* Ширина всего рейтинга*/
+	height: 25px;
+	overflow: hidden;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	background-position: left top;
+	/* Фоном будет являться "пустая" звездочка */
+}
+
+.star-rating li{
+	display: inline;	/* Элементы списка пойдут друг за другом. */
+}
+
+.star-rating a,
+.star-rating .current-rating{
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-indent: +1000px;	/* Уберем текст за пределы видимости */
+	height: 25px;
+	line-height: 25px;
+	outline: none;
+	overflow: hidden;
+	border: none;
+}
+
+.star-rating a:hover,
+.star-rating a:active,
+.star-rating a:focus{
+	background-position: left bottom;	/* При наведении мышки и т.д. фоном будет нижняя часть картинки, а именно "подсвеченная" звездочка */
+}
+
+/* Зададим стили для каждой звездочки */
+.star-rating a.star-1{
+	width: 20%;
+	z-index: 6;
+}
+
+.star-rating a.star-2{
+	width: 40%;
+	z-index: 5;
+}
+
+.star-rating a.star-3{
+	width: 60%;
+	z-index: 4;
+}
+
+.star-rating a.star-4{
+	width: 80%;
+	z-index: 3;
+}
+
+.star-rating a.star-5{
+	width:100%;
+	z-index:2;
+}
+
+/* Текущий рейтинг выше всех и имеет в качестве фона "нормальную" звездочку */
+.star-rating .current-rating{
+	z-index: 1;
+	background-position: left center;
+} 
+/* CSS для код для рейтинга, который расположен в тексте */
+.inline-rating{
+	display: -moz-inline-block;
+	display: -moz-inline-box;	/* Для поддержки кроссбраузерности */
+	display: inline-block;
+	vertical-align: middle;
+}
+.small-star{
+	width:50px;
+	height:10px;
+}
+
+/* CSS для код для маленького рейтинга */
+.small-star,
+.small-star a:hover,
+.small-star a:active,
+.small-star a:focus,
+.small-star .current-rating{
+	background-image: url(/themes/media/images/starrating_stars_s.gif);
+	line-height: 10px;
+	height: 10px;
+}
+* html .small-star .current-rating{
+	background:url(/themes/media/images/starrating_stars_s.gif) 0  20px;
+}
+*:first-child+html .small-star .current-rating{
+	background:url(/themes/media/images/starrating_stars_s.gif) 0  20px;
+}
+.user_menu1{
+	float: right;
+
+}
+.user_menu1 ul{
+	width: 60px;
+	padding-left: 5px;
+	margin: 27px 0 0 0;
+	text-align: left;
+	color:#B1B1B1;
+	line-height: 11px;
+}
+.user_menu1 a, .user_menu1 a:hover {
+	color:#B1B1B1;
+	font-size:9px;
+	font-weight:bold;
+	text-decoration:none;
+

@@ -1,0 +1,223 @@
+* {padding:0; margin:0; border:none;}
+body {font:11px Arial,Tahoma,sans-serif}
+a, a:hover, a:link {color:#005081}
+.wrapper {width:1000px; margin:0 auto}
+.clear {clear:both}
+.bold {font-weight:600}
+.title {padding-top:9px; color:#fff; font-weight:600; text-align:center; font-size:13px; text-transform:uppercase; text-shadow:#012 1px 1px 1px}
+
+.header {position:relative; height:104px; background:url('../images/top.jpg') 265px 0px no-repeat; padding-top:1px}
+.logo  {position:absolute; left:24px; top:16px}
+/*.header_menu {margin-top:72px; text-transform:uppercase; margin-left:18px; font-family:Verdana; text-shadow:#121F00 1px 1px 1px}*/
+.header_menu {text-transform:uppercase; margin-left:18px; font-family:Verdana; text-shadow:#121F00 1px 1px 1px; position:absolute; bottom:2px}
+.header_menu a {background:url('../images/hd-menu-left.png') 0 0 no-repeat; display:block; float:left;text-align:center; color:#fff; text-decoration:none; margin:0 2px 2px 0;}
+.header_menu a span {background:url('../images/hd-menu-right.png') 100% 0 no-repeat; padding:0px 10px; display:block}
+.header_menu a span span {background:url('../images/hd-menu-bg.png') 0 0 repeat-x; padding:5px 0 0; display:block; height:24px}
+.srchbar {height:71px; background:url('../images/search.jpg') 0 0 repeat-x}
+form.search {width:300px; padding:16px 0 0 68px}
+form.search .field {margin:0; padding:0; border:1px solid #3C78B5; width:210px; height:22px}
+form.search .submit {border:none; width:64px; height:22px; background:url('../images/point_find.jpg') 0 0 no-repeat}
+
+
+.left_nav {width:243px; float:left; margin-left:60px}
+.left_nav .block {margin-top:20px}
+.left_nav .block.thirst {margin-top:0}
+.left_nav .block.titled .title {height:34px; background:url('../images/title_left.jpg') 0 0 no-repeat}
+.left_nav .block.titled .cont {border:1px solid #D7D7D8; border-width:0 1px 1px; width:204px; margin-left:9px; padding:7px 0 14px 20px}
+.left_nav .block.titled .ftr {height:15px; background:url('../images/polosa_bottom.jpg') 0 0 no-repeat; margin-bottom:-15px}
+.left_nav .block.menu li {margin:5px 0; list-style-type:none}
+.left_nav .block.menu li a {background:url('../images/key2.gif') 0 60% no-repeat; padding:2px 0 1px 14px; text-decoration:none}
+.left_nav .block.menu li.new {background:url('../images/new.gif') 90% 60% no-repeat;}
+.left_nav .block.menu li.new a {font-weight:600}
+
+
+.right_nav {width:119px; float:right; margin-right:18px; display:none}
+.right_nav .block {margin-top:30px}
+.right_nav .block.thirst {margin-top:0}
+
+
+.cont_area {margin-left:55px; float:left; width:563px}
+.cont_area .button {display:block; background:url('../images/button-right.gif') 100% 0 no-repeat; float:left; text-transform:lowercase; color:#fff; text-decoration:none}
+.cont_area .button span {display:block; background:url('../images/button-left.gif') 0 0 no-repeat;}
+.cont_area .button span span {background:url('../images/button.gif') 0 0 repeat-x; border:none; padding:2px 0px 3px; margin:0px 4px}
+.cont_area .title {height:22px; background:url('../images/video_big.jpg') 0 0 no-repeat; font-size:14px}
+/*.cont_area .tit3 {font-size:23px; color:#820523; font-family:"Times New Roman",Times,serif}*/
+.cont_area .catalogbox {margin:-20px 0 0 -35px; padding:10px 0 0 17px}
+.cont_area .catalogbox .elem {float:left; margin:20px 0 0 30px; width:155px}
+.cont_area .catalogbox .elem .img {}
+.cont_area .categories {margin:11px 15px; line-height:150%}
+.cont_area .categories a {padding:2px 5px; white-space:nowrap; float:left}
+.cont_area .categories a.active {color:#f00; text-decoration:none}
+.cont_area .paging {color:#f00; margin:20px 0}
+.cont_area .paging a {color:#666}
+.cont_area .paging a:hover {color:#000}
+.cont_area .paging table {width:0; margin:0 auto}
+.cont_area .paging td {padding:5px 2px !important}
+
+
+.footer {height:54px; background:url("../images/bottom.jpg") no-repeat scroll 0 0; position:relative; color:#fff; padding:11px 0 0 150px; line-height:180%; margin-top:8px}
+.footer a {color:#fff}
+
+.left
+{
+	float:left;
+}
+.right
+{
+	float:right;
+}
+.inputClassNum
+{
+   	border:1px solid #9DBDE3;
+	height:18px;
+	font-size:12px;
+	margin-top:2px;
+	color:#12539F;
+}
+#windowCurt
+{
+	position: relative;
+}
+.window_screen
+{
+	position:absolute;
+	top: -60px;
+	left: 70px;
+	z-index:22;
+	width:400px;
+	border:1px solid #005081;
+	background:#ffffff;
+	font-size:12px;
+	color:#14345A;
+	padding:5px;
+}
+#showsmallcat
+{
+	margin-top:10px;
+}
+.inputClass
+{
+	border:1px solid #005081;
+	height:18px;
+	font-size:12px;
+	margin-top:2px;
+	color:#000;
+	width:90px;
+
+}
+.catShowBlock table
+{
+	font-size:12px;
+	background: #72A9CA;
+	width:600px;
+	margin-top:20px;
+}
+.thead
+{
+	background: #fff;
+	color:#000000;
+	text-align:center;
+	font-size:13px;
+}
+.trow1
+{
+	background: #fff;
+	font-size:12px;
+}
+.trow2
+{
+	background: #EBF7FE;
+	font-size:12px;
+}
+.inputs
+{
+	border:1px solid #72A9CA;
+	margin:5px;
+}
+#row-index,#row-obl,#row-adres,#row-city,#row-f,#row-n,#row-o,#row-phon,#row-milo,#row-captcha
+{
+	display:none;
+	color:#800000;
+	font-size:11px;
+}
+.button-go-zakaz
+{
+	width:146px;
+	height:36px;
+	background: url('/themes/partner6/images/go-order-go.jpg') no-repeat;
+	border:0px;
+	margin-top:20px;
+}
+.buttonCuts a
+{
+	margin-left:10px;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+.TitleContent
+{
+ 	padding-top:9px; color:#fff; font-weight:600; text-align:center; font-size:13px; text-transform:uppercase; text-shadow:#012 1px 1px 1px;
+	background:url("/themes/partner6/images/video_big.jpg") no-repeat scroll 0 0 transparent;
+	height:22px;
+}
+.TitleContent span
+{
+	margin-left:20px;
+}
+.TitleContent span a
+{
+ 	font-size:13px;
+ 	color:#fff;
+ 	text-decoration:underline;
+ 	margin-right:2px;
+}
+.Notitle
+{
+	font-size:15px;
+	font-weight:bold;
+	margin-top:20px;
+}
+.PlainText
+{
+	font-size:12px;
+	color:#000000;
+	text-align:justify;
+	width:590px;
+	margin-bottom:10px;
+	margin-top:10px;
+}
+.mainError
+{
+	color:#852916;
+	font-size:14px;
+	margin-bottom:10px;
+}
+.zakaz
+{
+ 	background: #CCCCCC;
+}
+.zakaz td
+{
+	 color:#000000;
+	 font-size:12px;
+	 font-family:Trebuchet MS;
+	 font-weight:normal;
+}
+.zakaz a
+{
+	font-size:12px;
+	font-family:Trebuchet MS;
+	color:#8D8D8D;
+	text-decoration:none;
+	border:0px;
+}
+#bas-tt
+{
+	position:absolute;
+	right:30px;
+	top:20px;
+}
+#zakaz table td,#thiszakaz table td{text-align: left;}
+table.center td {text-align: left;}
+.bitButton{text-align: center !important;padding-left: 0px !important;}
+.catShowBlock table td{text-align: center}

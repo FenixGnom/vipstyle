@@ -1,0 +1,21 @@
+<div class="contentTitle"><span>Шаг 1. Системные требования</span></div><br/>
+<div>Права на файл config.php: <span class="correct_<?php echo $vars['config']['correct']?>"><?php echo $vars['config']['text']?></span></div><br/>
+<div>Права на директорию cache: <span class="correct_<?php echo $vars['cache']['correct']?>"><?php echo $vars['cache']['text']?></span></div><br/>
+<div>Права на директорию cache/files: <span class="correct_<?php echo $vars['files']['correct']?>"><?php echo $vars['files']['text']?></span></div><br/>
+<div>Права на директорию cache/catalog: <span class="correct_<?php echo $vars['cachecatalog']['correct']?>"><?php echo $vars['cachecatalog']['text']?></span></div><br/>
+
+<div>Права на директорию catalog: <span class="correct_<?php echo $vars['catalog']['correct']?>"><?php echo $vars['catalog']['text']?></span></div><br/>
+<div>Права на директорию error: <span class="correct_<?php echo $vars['catalogerror']['correct']?>"><?php echo $vars['catalogerror']['text']?></span></div><br/>
+<div>Права на директорию update: <span class="correct_<?php echo $vars['catalogupdate']['correct']?>"><?php echo $vars['catalogupdate']['text']?></span></div><br/>
+<div>Права на директорию catalog/offers: <span class="correct_<?php echo $vars['catalogoffer']['correct']?>"><?php echo $vars['catalogoffer']['text']?></span></div><br/>
+<div>Права на директорию templates_c: <span class="correct_<?php echo $vars['templates_c']['correct']?>"><?php echo $vars['templates_c']['text']?></span></div><br/>
+
+<div>PHP: <span class="correct_<?php echo $vars['php']['correct']?>"><?php echo $vars['php']['text']?></span></div><br/>
+<div>Библиотека GD: <span class="correct_<?php echo $vars['gd']['correct']?>"><?php echo $vars['gd']['text']?></span></div><br/>
+<div>Модуль mysqli: <span class="correct_<?php echo $vars['mysqli']['correct']?>"><?php echo $vars['mysqli']['text']?></span></div><br/>
+<div>Модуль curl: <span class="correct_<?php echo $vars['curl']['correct']?>"><?php echo $vars['curl']['text']?></span></div><br/>
+<div>
+	<form action="/" method="POST">
+		<input type="submit" name="submit" value="Перейти на шаг 2 установки" style="visibility: <?php echo $vars['allowed']?>;"/>
+	</form>
+</div>

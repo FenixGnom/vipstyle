@@ -1,0 +1,77 @@
+
+<div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="brand" href="/admin">Shop <?=$this->vars['version']?></a>
+					<?if (isset($_SESSION['is_admin'])):?>
+						<ul class="nav">
+							<li class="divider-vertical"></li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+									Управление контентом
+									<b class="caret"></b>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="/admin/descriptioncat">Описания категорий</a></li>
+									<li class="divider"></li>
+									
+									<li><a href="/admin/descriptionsubcat">Описания подкатегорий</a></li>
+									<li class="divider"></li>
+									
+									<li><a href="/admin/descriptionoffers">Описания товаров</a></li>
+									<li class="divider"></li>
+									
+									<li><a href="/admin/catalog">Отображение</a></li>
+									<li class="divider"></li>
+									
+									<li><a href="/admin/statcon">Статический контент</a></li>
+									<li class="divider"></li>	
+									
+									<li><a href="/admin/statmenu">Меню контента</a></li>
+									<li class="divider"></li>
+									
+									<li><a href="/admin/seo">SEO фичи</a></li>							
+									
+								</ul>
+							</li>
+							<li class="divider-vertical"></li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+									Статистика
+									<b class="caret"></b>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="/admin/showorders">Заказы</a></li>
+									<li class="divider"></li>
+									<li><a href="/admin/showvisit">Переходы с поисковиков</a></li>
+									<li><a href="/admin/showphrase">Список фраз</a></li>
+								   
+								</ul>
+							</li>
+							<li class="divider-vertical"></li>
+							<li class="dropdown ">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+									Настройки
+									<b class="caret"></b>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="/admin/config"><i class="icon-cog"></i> Базовые настройки</a></li>
+									<li><a href="/admin/tpls"><i class="icon-eye-open"></i> Внешний вид</a></li>
+									<li class="divider"></li>
+									<li><a href="/admin/apiserver"><i class="icon-random"></i> Параметры соединения с сервером "Всемайки"</a></li>
+									<li class="divider"></li>
+									<li><a href="/admin/update"><i class="icon-refresh"></i> Обновление каталога</a></li>
+									<!--<li><a href="/admin/updatehistory"><i class="icon-list-alt"></i> История обновлений каталога</a></li>-->
+								</ul>
+							</li>
+						</ul>
+					
+						<ul class="nav pull-right">
+							<li class="divider-vertical"></li>
+							<li><a href="/" target="_blank">Перейти на сайт</a></li>
+							<li><a href="/admin/logout">Выход</a></li>
+						</ul>
+					<?endif;?>
+                </div>
+            </div>
+</div>
